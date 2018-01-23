@@ -4,13 +4,13 @@ before_install:
   texlive-latex-recommended
 script:
 - mkdir _build
-- latexmk -pdf -outdir=_build lab01/cs111S2018_lab01.tex
+- latexmk -pdf -outdir=_build lab01/cs112S2018_lab01.tex
 deploy:
   provider: releases
   api_key:
     secure: TbcGB/mUgAM3eaDbfvBqxCrBMjFXStPrtZgSFFlr/0bdGSpndyUlstH39hvL5v2n8flHE4eiw17HoMz2tS75WryC7qCZH7Lz6bn3RU4rlgfPDI9eJN2tA8LrFeLxsa3TZozCZ2SMnQUcyorS7LcYp3pkGmQv+rwKUyc7OU/19ZaXFqDMkVOi55Cq71FSo9kqjtP3TdaPmDNGNhnBUiPs742EKVZ2bqqkporiC/uGu2mg2lCVKkXqXhtRkqgjmgdd9C5TvCCAmCA3pJU5IHl0wc0rjRoQ/B9Wo0bxG2UZU6kXZ7qq/+pq3Wd2bdNEVs9MuIhUDWI6Icz3DgkQ5PkKTbJ3Ke0caoksGEZNqFqW+SgRmoACQLl3ed8+RU6jP9b4cDe9lXn6kpRlMnE+4aodq/vnocIbfjGjT8vj5axrLZokVoDqMQAhqgU/jmgV/2kTofy/bmSXauFyR2goO0JTt+zan+23SokELEQwIOaxUt2Fz7rcJ6OsxYQ95ZxU1NV/B542A28oDKec2ir/GYrKxzsb71y2VRFCcRnzA/5thKNldnW6wbFqgBU2avqSsfF26fgUk1oG9EZqomqPaQyfRI/gQMHlD10vSKib26E9n19LZ7o1XfQhQJVzlNQa0B4AiJfg9aN2OSUir1TXf4nKGnCSDVIy2rZzF9CZmjqQHa8=
   file:
-    - _build/cs111S2018_lab01.pdf
+    - _build/cs112S2018_lab01.pdf
   skip_cleanup: true
   on:
     tags: true
