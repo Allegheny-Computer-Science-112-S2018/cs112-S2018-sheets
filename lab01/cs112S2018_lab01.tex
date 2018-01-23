@@ -291,36 +291,24 @@ one directory from your current location, then you can type the command \command
 and directories do you see? What do you think is their purpose? Spend some time exploring, sharing your discoveries with
 a neighbor and a \mbox{teaching assistant}.
 
-\section*{Displaying Output with a Java Program}
+\section*{Enhancing and Testing a Java Program}
 
 In order view the source code of a Java program or a Markdown-based writing assignment, you need a text editor. There
-are many different text editors on your workstation and you should feel free to explore these on your own. Since it is a
-powerful text editor known for helping computer scientists ``edit text at the speed of thought'', in this class we will
-normally use the text editor called \command{gvim}. Today, you will view and improve your first Java program in {\tt
-  gvim}! To load the source code of today's Java program into \program{gvim}, you should type \command{gvim
-src/main/java/labone/CreditCard.java} in your terminal window. This should cause a new window, the \program{gvim}
-text editor, to appear on your screen. Since \program{gvim} is a modal editor, you may notice that if you start typing,
-nothing appears (unless you happen to hit certain letters such as \command{i}, \command{o}, \command{a}, and a few
-others). This is because you are not in ``insert mode.'' To get into insert mode, just type the letter \command{i}
-(lower case). Once you do this, the window should show the word \command{--INSERT--} in the lower left corner.
+are many different text editors on your workstation and you should feel free to explore these on your own. For instance,
+you may adopt either the GVim or the Atom text editor to complete this laboratory assignment. Now, please study the
+source code of the \mainprogram{}, noticing that some of its methods are incomplete. You can refer to the Code Fragments
+in the textbook to discover the missing source code and add it back into the program. Next, you should also notice that
+the \mainprogram{} has a test suite called \testprogram{} that is written in the JUnit testing framework; please refer
+to Section 1.9 and the comment's in the source code of this test suite to learn more about how it works. Intuitively, a
+Junit test suite has individual test cases, written as Java methods, that each work to establish a confidence in the
+correctness of \mainprogram{}.
 
-This laboratory assignment invites you to implement a Java program that displays exactly four lines of output. The first
-output line should display your name and then today's date. The next three lines should each display some words of
-advice that you want to share with the person running your program. You can accomplish the first task by typing
-\command{System.out.println("Gregory M. Kapfhammer " + new Date());}, substituting your name for the name of the course
-instructor. Your program will produce three additional lines of output once you add three more
-\command{System.out.println} statements. When you are finished typing text in \program{gvim}, press the ESC key located
-in the upper left corner of the keyboard. This should remove the word \command{--INSERT--} from the bottom of the screen
-and take you out of insert mode. Use the \option{File/Save} menu to save your program. Alternatively, if you would like
-to use the keyboard to save your file, you can press \command{:w} when you are not in insert mode. Leaving the {\tt
-gvim} window open, go back to your terminal window. Now, you are ready to learn to use new tools that build and run your
-program and check its correctness!
-
-If you want to \step{build} your program you can type the command \gradlebuild{} in your terminal, thereby causing the
-Java compiler to check your program for errors and get it ready to run. If you get any error messages, go back into
-\program{gvim} and try to figure out what you mis-typed and fix it. Once you have solved the problem, make a note of the
-error and the solution for resolving it. Re-save your program and then build it again by re-running the \gradlebuild{}.
-If you cannot build \mainprogram{} correctly, then please talk with a teaching assistant or the instructor.
+Now, if you want to \step{build} your program you can type the
+command \gradlebuild{} in your terminal, thereby causing the Java compiler to check your program for errors and get it
+ready to run. If you get any error messages, go back into \program{gvim} and try to figure out what you mis-typed and
+fix it. Once you have solved the problem, make a note of the error and the solution for resolving it. Re-save your
+program and then build it again by re-running the \gradlebuild{}. If you cannot build \mainprogram{} correctly, then
+please talk with a teaching assistant or the instructor.
 
 When all of the errors are eliminated, you can run your program by typing \gradlerun{} in the terminal window---this is
 the ``execute'' step that will run your program and produce the designated output. You should see your name, today's
