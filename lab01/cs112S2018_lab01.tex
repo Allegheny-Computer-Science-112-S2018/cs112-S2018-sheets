@@ -320,8 +320,8 @@ forget to put a space inside the quotation marks after your last name?). If not,
 and re-run it. Once the program runs, please reflect on this process. What step did you find to be the most challenging?
 Why? You should write your reflections in a file, called \reflection{}, that uses the Markdown writing language. You can
 learn more about Markdown by viewing the aforementioned GitHub guide. To complete this aspect of the assignment, you
-should write one high-quality paragraph that reports on your experiences. Now, verbally share your experiences with
-another class member!
+should write one high-quality paragraph that reports on your experiences. Your \reflection{} should also contain answers
+to other questions, about \mainprogram{}, posed at the end of this assignment sheet.
 
 Since this is our first laboratory assignment and you are still learning how to use the appropriate hardware and
 software, don't become frustrated if you make a mistake. Instead, use your mistakes as an opportunity for learning both
@@ -330,17 +330,17 @@ assistants, and the course instructor.
 
 \section*{Checking the Correctness of Your Program and Writing}
 
-As verified by Checkstyle tool, the source code for the \mainprogram{} file must adhere to all of the requirements in
-the Google Java Style Guide available at \url{https://google.github.io/styleguide/javaguide.html}. The Markdown file
-that contains your reflection must adhere to the standards described in the Markdown Syntax Guide
+As verified by Checkstyle tool, the source code for the \mainprogram{} and \testprogram{} files must adhere to all of
+the requirements in the Google Java Style Guide available at \url{https://google.github.io/styleguide/javaguide.html}.
+The Markdown file that contains your reflection must adhere to the standards described in the Markdown Syntax Guide
 \url{https://guides.github.com/features/mastering-markdown/}. Finally, your \reflection{} file should adhere to the
 Markdown standards established by the \step{Markdown linting} tool available at
 \url{https://github.com/markdownlint/markdownlint/} and the writing standards set by the \step{prose linting} tool from
 \url{http://proselint.com/}. Instead of requiring you to manually check that your deliverables adhere to these
-industry-accepted standards, the GatorGrader tool that you will use in this laboratory assignment makes it easy for you
-to automatically check if your submission meets the standards for correctness. For instance, GatorGrader will check to
-ensure that \mainprogram{} produces exactly four lines of output and that you use the \command{new Date()} construct in
-the Java source code to cause the program to display today's date.
+industry-accepted standards, GatorGrader makes it easy for you to automatically check if your submission meets the
+standards for correctness. For instance, GatorGrader will run the provided JUnit tests, check to ensure that
+\mainprogram{} produces exactly twenty lines of output, see that you commit to GitHub a sufficient number of times when
+completing this assignment.
 
 To get started with the use of GatorGrader, type the command \gatorgraderstart{} in your terminal window. Once this step
 completes you can type \gatorgradercheck{}. If your work does not meet all of the assignment's requirements, then you
