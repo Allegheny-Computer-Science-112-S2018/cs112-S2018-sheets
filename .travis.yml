@@ -5,7 +5,7 @@ before_install:
 script:
 - mkdir _build
 - latexmk -pdf -outdir=_build lab01/cs112S2018_lab01.tex
-- latexmk -pdf -outdir=_build practical01/cs103S2018_practical01.tex
+- latexmk -pdf -outdir=_build practical01/cs112S2018_practical01.tex
 deploy:
   provider: releases
   api_key:
