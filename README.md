@@ -1,4 +1,4 @@
-# cs112-S2018-lab-sheets
+# cs112-S2018-sheets
 
 This repository contains all of the laboratory assignment sheets for Computer
 Science 112 Fall 2017. Each directory in this repository contains the LaTeX
