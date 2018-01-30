@@ -236,32 +236,47 @@ assignment, you need a text editor. There are many different text editors on
 your workstation and you should feel free to explore these on your own. For
 instance, you may adopt either the GVim or the Atom text editor to complete this
 laboratory assignment. Please study the source code of the \mainprogramhelper,
-noticing that some of its methods are incomplete.
-Next, you should also notice that the \mainprogram{} has a
-test suite called \testprogram{} that is written in the JUnit testing framework;
-please refer to Section 1.9 and the comment's in the source code of this test
-suite to learn more about how it works. Intuitively, a Junit test suite has
-individual test cases, written as Java methods, that each work to establish a
-confidence in the correctness of \mainprogram{}.
+noticing that some of its methods are incomplete. Now, can you draw a picture
+showing how the classes (both test suites and supporting entities) are related?
+For instance, you should notice that the \mainprogramhelper{} has a test suite
+called \testprogram{} that is written in the JUnit testing framework; please
+refer to Section 1.9 and the comment's in the source code of this test suite to
+learn more about how it works. Intuitively, a Junit test suite has individual
+test cases, written as Java methods, that each work to establish a confidence in
+the correctness of \mainprogram{}.
 
-Now, if you want to \step{build} your program you can type the command \gradlebuild{} in your terminal, thereby causing
-the Java compiler to check your program for errors and get it ready to run. If you get any error messages, go back to
-your text editor and figure out what you mis-typed and fix it. Once you have solved the problem, make a note of the
-error and the solution for resolving it. Re-save your program and then build it again by re-running the \gradlebuild{}.
-If you cannot build \mainprogram{} correctly, then please talk with a teaching assistant or the instructor. You can also
-run the test suite for the \mainprogram{} by typing \gradletest{} in the terminal. What is the purpose of each of these
-test cases? What output do you see from running the test suite? Does this output suggest that the program is likely to
-produce the correct output? How did you know?
+Your program should ultimately produce the output that is given in
+Figure~\ref{fig:output}. However, you will note that the current implementation
+is missing several necessary methods (e.g., a constructor for the
+\program{Sentences} class and then methods like
+\program{readSentencesFromFile}). You should add these methods to the program,
+including test cases whenever it will help you to establish a confidence in the
+correctness of your implementation. If you want to \step{build} your program you
+can type the command \gradlebuild{} in your terminal, thereby causing the Java
+compiler to check your program for errors and get it ready to run. If you get
+any error messages, go back to your text editor and figure out what you
+mis-typed and fix it. Once you have solved the problem, make a note of the error
+and the solution for resolving it. Re-save your program and then build it again
+by re-running the \gradlebuild{}. If you cannot build \mainprogram{} correctly,
+then please talk with the course instructor. You can also run the test suite for
+the classes in \mainprogram{} by typing \gradletest{} in the terminal. What is
+the purpose of each of these test cases? Notice that a test suite does not have
+a test for an array of size three---you should add it to ensure correctness!
 
-Once you resolve all of the building and testing errors, you can run your program by typing \gradlerun{} in the terminal
-window---this is the ``execute'' step that will run your program and produce the designated output. You can see if your
-program is producing the desired output by looking at Code Fragment 1.7. Do you see that it produces twenty lines of
-output? Can you see that it computes the correct numerical values? If not, then repair the program and re-build and
-re-run it. Once the program runs, please reflect on this process. What step did you find to be the most challenging?
-Why? You should write your reflections in a file, called \reflection{}, that uses the Markdown writing language. You can
-learn more about Markdown by viewing the aforementioned GitHub guide. To complete this aspect of the assignment, you
-should write one high-quality paragraph that reports on your experiences. Your \reflection{} should also contain answers
-to other questions, about \mainprogram{}, posed at the end of this assignment sheet.
+Once you resolve all of the building and testing errors, you can run your
+program by typing \gradlerun{} in the terminal window---this is the ``execute''
+step that will run your program and produce the designated output. You can see
+if your program is producing the desired output by looking at
+Figure~\ref{fig:output}. Do you see that it produces twenty-six lines of output?
+Can you see that it performs the reversal correctly? If not, then repair the
+program and re-build and re-run it. Once the program runs, please reflect on
+this process. What step did you find to be the most challenging? Why? You should
+write your reflections in a file, called \reflection{}, that uses the Markdown
+writing language. You can learn more about Markdown by viewing the
+aforementioned GitHub guide. To complete this aspect of the assignment, you
+should write one high-quality paragraph that reports on your experiences. Your
+\reflection{} should also contain answers to other questions about
+\mainprogram{}'s implementation and testing.
 
 \begin{figure}[t]
   \centering
@@ -297,23 +312,27 @@ to other questions, about \mainprogram{}, posed at the end of this assignment sh
 
   \end{verbatim}
   \vspace*{-.5in}
-  \caption{The output}~\label{fig:output}
+  \caption{The Expected Output of the \mainprogram{}.}~\label{fig:output}
   \vspace*{-.25in}
 \end{figure}
 
 \section*{Checking the Correctness of Your Program and Writing}
 
-As verified by Checkstyle tool, the source code for the \mainprogram{} and \testprogram{} files must adhere to all of
-the requirements in the Google Java Style Guide available at \url{https://google.github.io/styleguide/javaguide.html}.
-The Markdown file that contains your reflection must adhere to the standards described in the Markdown Syntax Guide
-\url{https://guides.github.com/features/mastering-markdown/}. Finally, your \reflection{} file should adhere to the
-Markdown standards established by the \step{Markdown linting} tool available at
-\url{https://github.com/markdownlint/markdownlint/} and the writing standards set by the \step{prose linting} tool from
-\url{http://proselint.com/}. Instead of requiring you to manually check that your deliverables adhere to these
-industry-accepted standards, GatorGrader makes it easy for you to automatically check if your submission meets the
-standards for correctness. For instance, GatorGrader will run the provided JUnit tests, check to ensure that
-\mainprogram{} produces exactly twenty lines of output, and see that you commit to GitHub a sufficient number of times
-when completing this assignment.
+As verified by Checkstyle tool, the source code for the \mainprogram{} and
+\testprogram{} files must adhere to all of the requirements in the Google Java
+Style Guide available at
+\url{https://google.github.io/styleguide/javaguide.html}. The Markdown file that
+contains your reflection must adhere to the standards described in the Markdown
+Syntax Guide \url{https://guides.github.com/features/mastering-markdown/}.
+Finally, your \reflection{} file should adhere to the Markdown standards
+established by the \step{Markdown linting} tool available at
+\url{https://github.com/markdownlint/markdownlint/}. Instead of requiring you to
+manually check that your deliverables adhere to these industry-accepted
+standards, GatorGrader makes it easy for you to automatically check if your
+submission meets the standards for correctness. For instance, GatorGrader will
+run the provided JUnit tests, check to ensure that \mainprogram{} produces
+twenty-six lines of output, and see that you commit to GitHub a sufficient
+number of times when completing this assignment.
 
 To get started with the use of GatorGrader, type the command \gatorgraderstart{} in your terminal window. Once this step
 completes you can type \gatorgradercheck{}. If your work does not meet all of the assignment's requirements, then you
