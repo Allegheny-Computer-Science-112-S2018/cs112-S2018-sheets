@@ -229,17 +229,20 @@ one directory from your current location, then you can type the command \command
 and directories do you see? What do you think is their purpose? Spend some time exploring, sharing your discoveries with
 a neighbor and a \mbox{teaching assistant}.
 
-\section*{Designing, Implementing, and Testing a Sentences Reversing Program}
+\section*{Implementing and Testing a Sentences Reversing Program}
 
-In order view the source code of a Java program or a Markdown-based writing assignment, you need a text editor. There
-are many different text editors on your workstation and you should feel free to explore these on your own. For instance,
-you may adopt either the GVim or the Atom text editor to complete this laboratory assignment. Please study the source
-code of the \mainprogram, noticing that some of its methods are incomplete. You can refer to the Code Fragments in the
-textbook to discover the missing source code and add it back into the program. Next, you should also notice that the
-\mainprogram{} has a test suite called \testprogram{} that is written in the JUnit testing framework; please refer to
-Section 1.9 and the comment's in the source code of this test suite to learn more about how it works. Intuitively, a
-Junit test suite has individual test cases, written as Java methods, that each work to establish a confidence in the
-correctness of \mainprogram{}.
+In order view the source code of a Java program or a Markdown-based writing
+assignment, you need a text editor. There are many different text editors on
+your workstation and you should feel free to explore these on your own. For
+instance, you may adopt either the GVim or the Atom text editor to complete this
+laboratory assignment. Please study the source code of the \mainprogramhelper,
+noticing that some of its methods are incomplete.
+Next, you should also notice that the \mainprogram{} has a
+test suite called \testprogram{} that is written in the JUnit testing framework;
+please refer to Section 1.9 and the comment's in the source code of this test
+suite to learn more about how it works. Intuitively, a Junit test suite has
+individual test cases, written as Java methods, that each work to establish a
+confidence in the correctness of \mainprogram{}.
 
 Now, if you want to \step{build} your program you can type the command \gradlebuild{} in your terminal, thereby causing
 the Java compiler to check your program for errors and get it ready to run. If you get any error messages, go back to
@@ -260,10 +263,43 @@ learn more about Markdown by viewing the aforementioned GitHub guide. To complet
 should write one high-quality paragraph that reports on your experiences. Your \reflection{} should also contain answers
 to other questions, about \mainprogram{}, posed at the end of this assignment sheet.
 
-Since this is our first laboratory assignment and you are still learning how to use the appropriate hardware and
-software, don't become frustrated if you make a mistake. Instead, use your mistakes as an opportunity for learning both
-about the necessary technology and the background and expertise of the other students in the class, the teaching
-assistants, and the course instructor.
+\begin{figure}[t]
+  \centering
+
+  \begin{verbatim}
+
+  Printing Sentences before Reversal ...
+    (0, First)
+    (1, Second)
+    (2, Third)
+    (3, Fourth)
+    (4, Fifth)
+    (5, Sixth)
+    (6, Seventh)
+    (7, Eighth)
+    (8, Ninth)
+    (9, Tenth)
+  ... Done Printing Sentences before Reversal.
+  Reversing the Sentences ...
+  ... Done Reversing the Sentences.
+  Printing the Sentences after Reversal ...
+    (9, Tenth)
+    (8, Ninth)
+    (7, Eighth)
+    (6, Seventh)
+    (5, Sixth)
+    (4, Fifth)
+    (3, Fourth)
+    (2, Third)
+    (1, Second)
+    (0, First)
+  ... Done Printing the Sentences after Reversal.
+
+  \end{verbatim}
+  \vspace*{-.5in}
+  \caption{The output}~\label{fig:output}
+  \vspace*{-.25in}
+\end{figure}
 
 \section*{Checking the Correctness of Your Program and Writing}
 
@@ -318,28 +354,14 @@ Instead, this assignment invites you to submit, using GitHub, the following deli
   \setlength{\itemsep}{0in}
 
 \item Stored in a Markdown file called \reflection{}, a one-paragraph response, each consisting of at least three
-  sentences, for each of the following questions.
-
-  \begin{enumerate}
-    \itemsep 0em
-
-    \item The {\tt SentencesReverser} constructor uses the {\tt this} keyword --- what does it mean?
-
-    \item The {\tt SentencesReverser} class contains a {\tt static} method --- how does it work?
-
-    \item The {\tt SentencesReverser} class has a {\tt main} method --- what is the purpose of this method?
-
-    \item How does the {\tt SentencesReverser} class use a {\tt for} loop and a {\tt while} loop?
-
-    \item The {\tt SentencesReverser} class creates a {\tt wallet} --- what is it and how does it work?
-
-  \end{enumerate}
-
-\item Stored in a Markdown file called \reflection{}, a one-paragraph (at least three sentence) reflection on the
-  challenges you faced and the steps that you took to solve them.
+  sentences, for each stated question.
 
 \item A properly documented, well-formatted, and correct version of \mainprogramsource{} that both meets all of the
   established requirements and produces the desired output.
+
+\item A properly documented, well-formatted, and correct version all of the
+  additional Java files needed to complete this assignment (e.g.,
+  \mainprogramhelpersource).
 
 \end{enumerate}
 
