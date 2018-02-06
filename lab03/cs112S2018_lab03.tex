@@ -18,15 +18,15 @@
 % Edit these commands to give the name to the main program
 
 \newcommand{\mainprogram}{\lstinline{Reverser}}
-\newcommand{\mainprogramsource}{\lstinline{src/main/java/labtwo/Reverser.java}}
+\newcommand{\mainprogramsource}{\lstinline{src/main/java/labthree/Reverser.java}}
 
 \newcommand{\mainprogramhelper}{\lstinline{Sentences}}
-\newcommand{\mainprogramhelpersource}{\lstinline{src/main/java/labtwo/Sentences.java}}
+\newcommand{\mainprogramhelpersource}{\lstinline{src/main/java/labthree/Sentences.java}}
 
 % Edit these commands to give the name to the test suite
 
 \newcommand{\testprogram}{\lstinline{TestReverser}}
-\newcommand{\testprogramsource}{\lstinline{src/test/java/labtwo/TestReverser.java}}
+\newcommand{\testprogramsource}{\lstinline{src/test/java/labthree/TestReverser.java}}
 
 % Edit this commands to describe key deliverables
 
@@ -55,7 +55,7 @@
 \newcommand{\gitpush}{\command{git push}}
 \newcommand{\gitpull}{\command{git pull}}
 
-\newcommand{\gitcommitmainprogram}{\command{git commit src/main/java/labtwo/Reverser.java -m "Your
+\newcommand{\gitcommitmainprogram}{\command{git commit src/main/java/labthree/Reverser.java -m "Your
 descriptive commit message"}}
 
 % Use this when displaying a new command
@@ -246,23 +246,22 @@ the test suite assesses the \mainprogram{}, you should notice that this classes
 is missing an implementation of the \program{reverse} method. Please refer to
 page 95 of the textbook for a suitable implementation of this method.
 
+% You should add these methods to the program, including test cases whenever it
+% will help you to establish a confidence in the correctness of your
+% implementation. I
+
 Your program should ultimately produce the output that is given in
-Figure~\ref{fig:output}. However, you will note that the current implementation
-is missing several necessary methods (e.g., a constructor for the
-\program{Sentences} class and then methods like
-\program{readSentencesFromFile}). You should add these methods to the program,
-including test cases whenever it will help you to establish a confidence in the
-correctness of your implementation. If you want to \step{build} your program you
-can type the command \gradlebuild{} in your terminal, thereby causing the Java
-compiler to check your program for errors and get it ready to run. If you get
-any error messages, go back to your text editor and figure out what you
-mis-typed and fix it. Once you have solved the problem, make a note of the error
-and the solution for resolving it. Re-save your program and then build it again
-by re-running the \gradlebuild{}. If you cannot build \mainprogram{} correctly,
-then please talk with the course instructor. You can also run the test suite for
-the classes in \mainprogram{} by typing \gradletest{} in the terminal. What is
-the purpose of each of these test cases? Notice that a test suite does not have
-a test for an array of size three---you should add it to ensure correctness!
+Figure~\ref{fig:output}. If you want to \step{build} your program you can type
+the command \gradlebuild{} in your terminal, thereby causing the Java compiler
+to check your program for errors and get it ready to run. If you get any error
+messages, go back to your text editor and figure out what you mis-typed and fix
+it. Once you have solved the problem, make a note of the error and the solution
+for resolving it. Re-save your program and then build it again by re-running the
+\gradlebuild{}. If you cannot build \mainprogram{} correctly, then please talk
+with the course instructor. You can also run the test suite for the classes in
+\mainprogram{} by typing \gradletest{} in the terminal. What is the purpose of
+each of these test cases? Notice that a test suite does not have a test for an
+array of size three---you should add it to ensure correctness!
 
 Once you resolve all of the building and testing errors, you can run your
 program by typing \gradlerun{} in the terminal window---this is the ``execute''
@@ -283,36 +282,36 @@ should write one high-quality paragraph that reports on your experiences. Your
   \centering
 
   \begin{verbatim}
-
   Printing Sentences before Reversal ...
-    (0, First)
-    (1, Second)
-    (2, Third)
-    (3, Fourth)
-    (4, Fifth)
-    (5, Sixth)
-    (6, Seventh)
-    (7, Eighth)
-    (8, Ninth)
-    (9, Tenth)
+  (0, Sentence 0)
+  (1, Sentence 1)
+  (2, Sentence 2)
+  (3, Sentence 3)
+  (4, Sentence 4)
   ... Done Printing Sentences before Reversal.
-  Reversing the Sentences ...
-  ... Done Reversing the Sentences.
-  Printing the Sentences after Reversal ...
-    (9, Tenth)
-    (8, Ninth)
-    (7, Eighth)
-    (6, Seventh)
-    (5, Sixth)
-    (4, Fifth)
-    (3, Fourth)
-    (2, Third)
-    (1, Second)
-    (0, First)
-  ... Done Printing the Sentences after Reversal.
-
+  Printing Sentences after Reversal ...
+  (4, Sentence 4)
+  (3, Sentence 3)
+  (2, Sentence 2)
+  (1, Sentence 1)
+  (0, Sentence 0)
+  ... Done Printing Sentences after Reversal.
+  Printing Integers before Reversal ...
+  0
+  1
+  2
+  3
+  4
+  ... Done Printing Integeres before Reversal.
+  Printing Integers after Reversal ...
+  4
+  3
+  2
+  1
+  0
+  ... Done Printing Integers after Reversal.
   \end{verbatim}
-  \vspace*{-.5in}
+  \vspace*{-.25in}
   \caption{The Expected Output of the \mainprogram{}.}~\label{fig:output}
   \vspace*{-.25in}
 \end{figure}
@@ -377,12 +376,12 @@ Instead, this assignment invites you to submit, using GitHub, the following deli
   each consisting of at least three sentences, for each of the stated questions.
 
 \item A properly documented, well-formatted, and correct version of
-  \mainprogramsource{} that both meets all of the established requirements and
+  \mainprogramsource{} that meets all of the established requirements and
   produces the desired output.
 
 \item A properly documented, well-formatted, and correct version all of the
   additional Java files needed to complete this assignment (e.g.,
-  \mainprogramhelpersource).
+  \testprogramsource{}).
 
 \end{enumerate}
 
