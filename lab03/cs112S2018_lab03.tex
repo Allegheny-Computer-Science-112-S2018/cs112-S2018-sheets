@@ -235,33 +235,34 @@ discoveries with a neighbor and a \mbox{teaching assistant}.
 
 Please use a text editor to study the source code of the \mainprogram{} class,
 noticing that some of its methods are incomplete. Now, can you draw a picture
-showing how these classes (i.e., both test suites and supporting entities) are
+showing how these classes (i.e., both the test suite and main class) are
 related? For instance, you should notice that the \mainprogram{} has a test
 suite called \testprogram{} that is written in the JUnit testing framework;
 please refer to Section 1.9 and the comments in the source code of this test
 suite to learn more about how it works. Intuitively, a Junit test suite has
 individual test cases, written as Java methods, that each work to establish a
-confidence in the correctness of \mainprogram{}. Once you understand how 
-the test suite assesses the \mainprogram{}, you should notice that this classes
-is missing an implementation of the \program{reverse} method. Please refer to
-page 95 of the textbook for a suitable implementation of this method.
+confidence in the correctness of \mainprogram{}. Once you understand how the
+test suite assesses the \mainprogram's correctness, you should notice that this
+class is missing an implementation of the \program{reverse} method. Please refer
+to page 95 of the textbook for a suitable implementation of this method. Next,
+you will need to add a test case to \testprogram{} that ensures that the program
+correctly performs a reversal for \program{Integer[]} arrays. Finally, you must
+enhance the \program{main} method in the \mainprogram{} class so that it
+produces the output that is given in Figure~\ref{fig:output}.
 
-% You should add these methods to the program, including test cases whenever it
-% will help you to establish a confidence in the correctness of your
-% implementation. I
-
-Your program should ultimately produce the output that is given in
-Figure~\ref{fig:output}. If you want to \step{build} your program you can type
-the command \gradlebuild{} in your terminal, thereby causing the Java compiler
-to check your program for errors and get it ready to run. If you get any error
-messages, go back to your text editor and figure out what you mis-typed and fix
-it. Once you have solved the problem, make a note of the error and the solution
-for resolving it. Re-save your program and then build it again by re-running the
-\gradlebuild{}. If you cannot build \mainprogram{} correctly, then please talk
-with the course instructor. You can also run the test suite for the classes in
-\mainprogram{} by typing \gradletest{} in the terminal. What is the purpose of
-each of these test cases? Notice that a test suite does not have a test for an
-array of size three---you should add it to ensure correctness!
+If you want to \step{build} your program you can type the command \gradlebuild{}
+in your terminal, thereby causing the Java compiler to check your program for
+errors and get it ready to run. If you get any error messages, go back to your
+text editor and figure out what you mis-typed and fix it. Once you have solved
+the problem, make a note of the error and the solution for resolving it. Re-save
+your program and then build it again by re-running the \gradlebuild{}. If you
+cannot build \mainprogram{} correctly, then please talk with the course
+instructor. You can also run the test suite for the classes in \mainprogram{} by
+typing \gradletest{} in the terminal. Again, please make sure that you
+understand the purpose of each of these test cases and that you at least add the
+missing test case. Of course, think about other tests you could also add! You
+should incrementally complete this assignment, making small changes and
+regularly committing your source code and writing.
 
 Once you resolve all of the building and testing errors, you can run your
 program by typing \gradlerun{} in the terminal window---this is the ``execute''
@@ -302,7 +303,7 @@ should write one high-quality paragraph that reports on your experiences. Your
   2
   3
   4
-  ... Done Printing Integeres before Reversal.
+  ... Done Printing Integers before Reversal.
   Printing Integers after Reversal ...
   4
   3
