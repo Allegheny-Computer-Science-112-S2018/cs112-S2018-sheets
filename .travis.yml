@@ -6,6 +6,7 @@ script:
 - mkdir _build
 - latexmk -pdf -outdir=_build lab01/cs112S2018_lab01.tex
 - latexmk -pdf -outdir=_build lab02/cs112S2018_lab02.tex
+- latexmk -pdf -outdir=_build lab03/cs112S2018_lab03.tex
 - latexmk -pdf -outdir=_build practical01/cs112S2018_practical01.tex
 deploy:
   provider: releases
@@ -14,6 +15,7 @@ deploy:
   file:
     - _build/cs112S2018_lab01.pdf
     - _build/cs112S2018_lab02.pdf
+    - _build/cs112S2018_lab03.pdf
     - _build/cs112S2018_practical01.pdf
   skip_cleanup: true
   on:
