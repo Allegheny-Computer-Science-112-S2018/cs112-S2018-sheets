@@ -223,28 +223,28 @@ like:
   git clone git@github.com:Allegheny-Computer-Science-112-S2018/computer-science-112-spring-2018-lab-3-gkapfham.git
 \end{lstlisting}
 
-After this command finishes, you can use \command{cd} to change into the new directory. If you want to \step{go back}
-one directory from your current location, then you can type the command \command{cd ..}. Please continue to use the
-\command{cd} and \command{ls} commands to explore the files that you automatically downloaded from GitHub. What files
-and directories do you see? What do you think is their purpose? Spend some time exploring, sharing your discoveries with
-a neighbor and a \mbox{teaching assistant}.
+After this command finishes, you can use \command{cd} to change into the new
+directory. If you want to \step{go back} one directory from your current
+location, then you can type the command \command{cd ..}. Please continue to use
+the \command{cd} and \command{ls} commands to explore the files that you
+automatically downloaded from GitHub. What files and directories do you see?
+What do you think is their purpose? Spend some time exploring, sharing your
+discoveries with a neighbor and a \mbox{teaching assistant}.
 
-\section*{Implementing and Testing a Sentences Reversing Program}
+\section*{Implementing and Testing a Generic Array Reversal Program}
 
-In order view the source code of a Java program or a Markdown-based writing
-assignment, you need a text editor. There are many different text editors on
-your workstation and you should feel free to explore these on your own. For
-instance, you may adopt either the GVim or the Atom text editor to complete this
-laboratory assignment. Please study the source code of the \mainprogramhelper
-class, noticing that some of its methods are incomplete. Now, can you draw a
-picture showing how these classes (i.e., both test suites and supporting
-entities) are related? For instance, you should notice that the
-\mainprogramhelper{} has a test suite called \testprogram{} that is written in
-the JUnit testing framework; please refer to Section 1.9 and the comments in
-the source code of this test suite to learn more about how it works.
-Intuitively, a Junit test suite has individual test cases, written as Java
-methods, that each work to establish a confidence in the correctness of
-\mainprogram{}.
+Please use a text editor to study the source code of the \mainprogram{} class,
+noticing that some of its methods are incomplete. Now, can you draw a picture
+showing how these classes (i.e., both test suites and supporting entities) are
+related? For instance, you should notice that the \mainprogram{} has a test
+suite called \testprogram{} that is written in the JUnit testing framework;
+please refer to Section 1.9 and the comments in the source code of this test
+suite to learn more about how it works. Intuitively, a Junit test suite has
+individual test cases, written as Java methods, that each work to establish a
+confidence in the correctness of \mainprogram{}. Once you understand how 
+the test suite assesses the \mainprogram{}, you should notice that this classes
+is missing an implementation of the \program{reverse} method. Please refer to
+page 95 of the textbook for a suitable implementation of this method.
 
 Your program should ultimately produce the output that is given in
 Figure~\ref{fig:output}. However, you will note that the current implementation
