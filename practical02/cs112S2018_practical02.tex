@@ -19,12 +19,12 @@
 % Edit these commands to give the name to the main program
 
 \newcommand{\mainprogram}{\lstinline{StatisticsCalculator}}
-\newcommand{\mainprogramsource}{\lstinline{src/main/java/practicalone/StatisticsCalculator.java}}
+\newcommand{\mainprogramsource}{\lstinline{src/main/java/practicaltwo/StatisticsCalculator.java}}
 
 % Edit these commands to give the name to the test suite
 
 \newcommand{\testprogram}{\lstinline{TestStatisticsCalculator}}
-\newcommand{\testprogramsource}{\lstinline{src/test/java/practicalone/TestStatisticsCalculator.java}}
+\newcommand{\testprogramsource}{\lstinline{src/test/java/practicaltwo/TestStatisticsCalculator.java}}
 
 % Edit this commands to describe key deliverables
 
@@ -53,7 +53,7 @@
 \newcommand{\gitpush}{\command{git push}}
 \newcommand{\gitpull}{\command{git pull}}
 
-\newcommand{\gitcommitmainprogram}{\command{git commit src/main/java/practicalone/StatisticsCalculator.java -m "Your
+\newcommand{\gitcommitmainprogram}{\command{git commit src/main/java/practicaltwo/StatisticsCalculator.java -m "Your
 descriptive commit message"}}
 
 % Use this when displaying a new command
@@ -233,75 +233,77 @@ discoveries with a neighbor and a \mbox{teaching assistant}.
 
 \section*{Enhancing a Java Program that Calculates Summary Statistics}
 
-In order view the source code of a Java program or a Markdown-based writing
-assignment, you need a text editor. There are many different text editors on
-your workstation and you should feel free to explore these on your own. For
-instance, you may adopt either the GVim or the Atom text editor to complete this
-practical assignment. Please study the source code of the \mainprogram~program,
-noticing that one of its methods is incomplete. Specifically, you will notice
-that the program is missing an implementation of the \program{swap} method. Can you
-add in a full implementation of this method? Why do you think that the
-\program{swap} method accepts parameters of type \program{AtomicInteger}?
+Please study the source code of the \mainprogram, noticing that one of its
+methods is incomplete. That is, you will see that the program is missing an
+implementation of the \program{calculateVariance} method. Can you add in a
+correct version of this method? To learn more about how to perform a summation
+to calculate the variance of a list of \program{Double} values, please read the
+online article available at \url{https://www.wikihow.com/Calculate-Variance}.
+Specifically, the article's equation asks you to iterate through all of the
+values in an array so that you can subtract the mean from each data point and
+then square the result. You will need to ensure that the result from each
+iteration carries over to the next one. Then, you will perform a division and
+return this value.
 
-Next, you should also notice that the \mainprogram{} has a test suite called
-\testprogram{} that is written in the JUnit testing framework; please refer to
-Section 1.9 and the comment's in the source code of this test suite to learn
-more about how it works. Intuitively, a Junit test suite has individual test
-cases, written as Java methods, that each work to establish a confidence in the
-correctness of \mainprogram{}. First, please note that this test suite initially
-passes even though the program is incorrect. Why? Finally, you should add a new
-test case to this suite. What type of test is most needed?
-
-Now, if you want to \step{build} your program you can type the command
-\gradlebuild{} in your terminal, thereby causing the Java compiler to check your
-program for errors and get it ready to run. If you see any error messages, go
-back to your text editor and figure out what you mis-typed and fix it. Oncer you
-have solved the problem, make a note of the error and the solution for resolving
-it. Re-save your program and then build it again by re-running the
-\gradlebuild{}. If you cannot build \mainprogram{} correctly, then please talk
-with a teaching assistant or the instructor. You can also run the test suite for
-the \mainprogram{} by typing \gradletest{} in the terminal. What is the purpose
-of each of these test cases? What output do you see from running the test suite?
-Does this output suggest that the program is likely to produce the correct
-output? How did you know?
+You should run the test suite called \testprogram{} that is written in the JUnit
+testing framework. Please read each of the tests as they explain, in Java source
+code, the expected properties of the methods for calculating summary statistics.
+If you want to \step{build} your program you can type the command \gradlebuild{}
+in your terminal, thereby causing the Java compiler to check your program for
+errors and get it ready to run. If you see any error messages, go back to your
+text editor and figure out what you mis-typed and fix it. Oncer you have solved
+the problem, make a note of the error and the solution for resolving it. Re-save
+your program and then build it again by re-running the \gradlebuild{}. If you
+cannot build \mainprogram{} correctly, then please talk with a teaching
+assistant or the instructor. You can also run the test suite for the
+\mainprogram{} by typing \gradletest{} in the terminal. What is the purpose of
+each of these test cases? How do they check the output of the methods that
+calculate summary statistics? You should keep revising your implementation of
+\command{calculateVariance} until all tests pass.
 
 Once you resolve all of the building and testing errors, you can run your
-swapping program by typing \gradlerun{} in the terminal window---this is the
-``execute'' step that will run your program and produce the designated output.
-Do you see that it produces correct output? If not, then please determine what
-is wrong and try to repair the program and re-build and re-run it.
-
-% Since this is our first practical assignment and you are still
-% learning how to use the appropriate hardware and software, don't become
-% frustrated if you make a mistake. Instead, use your mistakes as an opportunity
-% for learning both about the necessary technology and the background and
-% expertise of the other students in the class, the teaching assistants, and the
-% course instructor.
+program by typing \gradlerun{} in the terminal window---this is the ``execute''
+step that will run your program and produce the designated output. Do you see
+that it produces the correct output with the expected numerical values? For
+instance, you program should output \command{This is the variance: 23.04}. If
+not, then please determine what is wrong and try to repair the program and
+re-build and re-run it.
 
 \section*{Checking the Correctness of Your Program and Writing}
 
-As verified by Checkstyle tool, the source code for the \mainprogram{} and \testprogram{} files must adhere to all of
-the requirements in the Google Java Style Guide available at \url{https://google.github.io/styleguide/javaguide.html}.
-The Markdown file that contains your reflection must adhere to the standards described in the Markdown Syntax Guide
-\url{https://guides.github.com/features/mastering-markdown/}. Finally, your \reflection{} file should adhere to the
-Markdown standards established by the \step{Markdown linting} tool available at
-\url{https://github.com/markdownlint/markdownlint/} and the writing standards set by the \step{prose linting} tool from
-\url{http://proselint.com/}. Instead of requiring you to manually check that your deliverables adhere to these
-industry-accepted standards, GatorGrader makes it easy for you to automatically check if your submission meets the
-standards for correctness. For instance, GatorGrader will run the provided JUnit tests, check to ensure that
-\mainprogram{} produces exactly six lines of output, and see that you committed to GitHub a sufficient number of times
-when completing this assignment.
+As verified by Checkstyle tool, the source code for the \mainprogram{} and its
+test suite must adhere to all of the requirements in the Google Java Style Guide
+available at \url{https://google.github.io/styleguide/javaguide.html}. The
+Markdown file that contains your reflection must adhere to the standards
+described in the Markdown Syntax Guide
+\url{https://guides.github.com/features/mastering-markdown/}. Finally, your
+\reflection{} file should adhere to the Markdown standards established by the
+\step{Markdown linting} tool available at
+\url{https://github.com/markdownlint/markdownlint/} and the writing standards
+set by the \step{prose linting} tool from \url{http://proselint.com/}. Instead
+of requiring you to manually check that your deliverables adhere to these
+industry-accepted standards, GatorGrader makes it easy for you to automatically
+check if your submission meets the standards for correctness. For instance,
+GatorGrader will run the provided tests, check to ensure that \mainprogram{}
+produces exactly ten lines of output, and see that you committed to GitHub a
+sufficient number of times when completing this assignment.
 
-To get started with the use of GatorGrader, type the command \gatorgraderstart{} in your terminal window. Once this step
-completes you can type \gatorgradercheck{}. If your work does not meet all of the assignment's requirements, then you
-will see the following output in your terminal: \command{Overall, are there any mistakes in the assignment? Yes}. If you
-do have mistakes in your assignment, then you will need to review GatorGrader's output, find the mistake, and try to fix
-it. Once your program is building correctly, fulfilling at least some of the assignment's requirements, you should
-transfer your files to GitHub using the \gitcommit{} and \gitpush{} commands. For example, if you want to signal that
-the \mainprogramsource{} file has been changed and is ready for transfer to GitHub you would first type
-\gitcommitmainprogram{} in your terminal, followed by typing \gitpush{} and checking to see that the transfer to GitHub
-is successful. If you notice that transferring your code or writing to GitHub did not work correctly, then please try to
-determine why, asking a teaching assistant or the course instructor for assistance, if necessary.
+To get started with the use of GatorGrader, type the command \gatorgraderstart{}
+in your terminal window. Once this step completes you can type
+\gatorgradercheck{}. If your work does not meet all of the assignment's
+requirements, then you will see the following output in your terminal:
+\command{Overall, are there any mistakes in the assignment? Yes}. If you do have
+mistakes in your assignment, then you will need to review GatorGrader's output,
+find the mistake, and try to fix it. Once your program is building correctly,
+fulfilling at least some of the assignment's requirements, you should transfer
+your files to GitHub using the \gitcommit{} and \gitpush{} commands. For
+example, if you want to signal that the \mainprogramsource{} file has been
+changed and is ready for transfer to GitHub you would first type
+\gitcommitmainprogram{} in your terminal, followed by typing \gitpush{} and
+checking to see that the transfer to GitHub is successful. If you notice that
+transferring your \mainprogramsource{} to GitHub does not work, then please try
+to determine why, asking a teaching assistant or the course instructor for
+assistance, if necessary.
 
 After the course instructor enables \step{continuous integration} with a system called Travis CI, when you use the
 \gitpush{} command to transfer your source code to your GitHub repository, Travis CI will initialize a \step{build} of
@@ -330,9 +332,8 @@ Instead, this assignment invites you to submit, using GitHub, the following deli
 
   \setlength{\itemsep}{0in}
 
-\item A properly documented, well-formatted, and correct version of
-  \mainprogramsource{} that meets the established requirements and produces the
-  desired output.
+\item A properly documented and correct version of \mainprogramsource{} that
+  meets the established requirements and produces the desired output.
 
 \end{enumerate}
 
