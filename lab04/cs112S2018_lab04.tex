@@ -235,89 +235,76 @@ automatically downloaded from GitHub. What files and directories do you see?
 What do you think is their purpose? Spend some time exploring, sharing your
 discoveries with a neighbor and a \mbox{teaching assistant}.
 
-\section*{Implementing and Testing a Generic Array Reversal Program}
+\section*{Implementing and Testing an Array Sorting Program}
+
+% Now, can you draw a picture showing how these classes (i.e., both the test
+% suite and main class) are related? For instance, you should notice that the
+% \mainprogram{} has a test suite called \testprogram{} that is written in the
+% JUnit testing framework; please refer to Section 1.9 and the comments in the
+% source code of this test suite to learn more about how it works. Intuitively, a
+% Junit test suite has individual test cases, written as Java methods, that each
+% work to establish a confidence in the correctness of \mainprogram{}. Once you
+% understand how the test suite assesses the \mainprogram's correctness, you
+% should notice that this class is missing an implementation of the
+% \program{reverse} method. Please refer to page 95 of the textbook for a
+% suitable implementation of this method. Next, you will need to add a test case
+% to \testprogram{} that ensures that the program correctly performs a reversal
+% for \program{Integer[]} arrays. Finally, you must enhance the \program{main}
+% method in the \mainprogram{} class so that it produces the output that is given
+% in Figure~\ref{fig:output}.
 
 Please use a text editor to study the source code of the \mainprogram{} class,
-noticing that some of its methods are incomplete. Now, can you draw a picture
-showing how these classes (i.e., both the test suite and main class) are
-related? For instance, you should notice that the \mainprogram{} has a test
-suite called \testprogram{} that is written in the JUnit testing framework;
-please refer to Section 1.9 and the comments in the source code of this test
-suite to learn more about how it works. Intuitively, a Junit test suite has
-individual test cases, written as Java methods, that each work to establish a
-confidence in the correctness of \mainprogram{}. Once you understand how the
-test suite assesses the \mainprogram's correctness, you should notice that this
-class is missing an implementation of the \program{reverse} method. Please refer
-to page 95 of the textbook for a suitable implementation of this method. Next,
-you will need to add a test case to \testprogram{} that ensures that the program
-correctly performs a reversal for \program{Integer[]} arrays. Finally, you must
-enhance the \program{main} method in the \mainprogram{} class so that it
-produces the output that is given in Figure~\ref{fig:output}.
+noticing that some of its methods are incomplete. Now, if you want to
+\step{build} your program you can type the command \gradlebuild{} in your
+terminal, thereby causing the Java compiler to check your program for errors and
+get it ready to run. At this point, you will notice that your program has
+compiler errors indicating that the source code in the \program{main} method of
+\mainprogram{} is not correct. So, you will need to correctly call the
+\program{InsertionSort.sort} method in \program{main}. However, once you ensure
+that the program correctly compiles, you will see that it does not produce the
+output in Figure~\ref{fig:output} and that many of the tests do not pass. What
+code is missing in the provided files?
 
-If you want to \step{build} your program you can type the command \gradlebuild{}
-in your terminal, thereby causing the Java compiler to check your program for
-errors and get it ready to run. If you get any error messages, go back to your
-text editor and figure out what you mis-typed and fix it. Once you have solved
-the problem, make a note of the error and the solution for resolving it. Re-save
-your program and then build it again by re-running the \gradlebuild{}. If you
-cannot build \mainprogram{} correctly, then please talk with the course
-instructor. You can also run the test suite for the classes in \mainprogram{} by
-typing \gradletest{} in the terminal. Again, please make sure that you
-understand the purpose of each of these test cases and that you at least add the
-missing test case. Of course, think about other tests you could also add! You
-should incrementally complete this assignment, making small changes and
-regularly committing your source code and writing.
 
-Once you resolve all of the building and testing errors, you can run your
-program by typing \gradlerun{} in the terminal window---this is the ``execute''
-step that will run your program and produce the designated output. You can see
-if your program is producing the desired output by looking at
-Figure~\ref{fig:output}. Do you see that it produces \mainprogramoutput{} lines
-of output? Can you see that it performs the array reversal correctly? If not,
-then repair the program and re-build and re-run it. Once the program runs,
-please reflect on this process. What step did you find to be the most
-challenging? Why? You should write your reflections in a file, called
-\reflection{}, that uses the Markdown writing language. You can learn more about
-Markdown by viewing the aforementioned GitHub guide. To complete this aspect of
-the assignment, you should write one high-quality paragraph that reports on your
-experiences. Your \reflection{} file should also contain answers to other
-questions about \mainprogram{}'s implementation and testing.
+
+% If you get any error messages, go back to your text editor and figure out
+% what you mis-typed and fix it. Once you have solved the problem, make a note
+% of the error and the solution for resolving it. Re-save your program and then
+% build it again by re-running the \gradlebuild{}. If you cannot build
+% \mainprogram{} correctly, then please talk with the course instructor. You
+% can also run the test suite for the classes in \mainprogram{} by typing
+% \gradletest{} in the terminal. Again, please make sure that you understand
+% the purpose of each of these test cases and that you at least add the missing
+% test case. Of course, think about other tests you could also add! You should
+% incrementally complete this assignment, making small changes and regularly
+% committing your source code and writing.
+
+% Once you resolve all of the building and testing errors, you can run your
+% program by typing \gradlerun{} in the terminal window---this is the ``execute''
+% step that will run your program and produce the designated output. You can see
+% if your program is producing the desired output by looking at
+% Figure~\ref{fig:output}. Do you see that it produces \mainprogramoutput{} lines
+% of output? Can you see that it performs the array reversal correctly? If not,
+% then repair the program and re-build and re-run it.
+
+Once the program runs, please reflect on this process. What step did you find to
+be the most challenging? Why? You should write your reflections in a file,
+called \reflection{}, that uses the Markdown writing language. You can learn
+more about Markdown by viewing the aforementioned GitHub guide. To complete this
+aspect of the assignment, you should write one high-quality paragraph that
+reports on your experiences. Your \reflection{} file should also contain answers
+to other questions about \mainprogram{}'s implementation and testing.
 
 \begin{figure}[t]
   \centering
-
   \begin{verbatim}
-  Printing Sentences before Reversal ...
-  (0, Sentence 0)
-  (1, Sentence 1)
-  (2, Sentence 2)
-  (3, Sentence 3)
-  (4, Sentence 4)
-  ... Done Printing Sentences before Reversal.
-  Printing Sentences after Reversal ...
-  (4, Sentence 4)
-  (3, Sentence 3)
-  (2, Sentence 2)
-  (1, Sentence 1)
-  (0, Sentence 0)
-  ... Done Printing Sentences after Reversal.
-  Printing Integers before Reversal ...
-  0
-  1
-  2
-  3
-  4
-  ... Done Printing Integers before Reversal.
-  Printing Integers after Reversal ...
-  4
-  3
-  2
-  1
-  0
-  ... Done Printing Integers after Reversal.
+  Before: [C, E, B, D, A, I, J, L, K, H, G, F]
+  After : [A, B, C, D, E, F, G, H, I, J, K, L]
+  Before: [1, 2, 4, 4, 9, 10, -10, 3, 8, 7, 20, 0]
+  After : [-10, 0, 1, 2, 3, 4, 4, 7, 8, 9, 10, 20]
   \end{verbatim}
-  \vspace*{-.25in}
-  \caption{The Expected Output of the \mainprogram{}.}~\label{fig:output}
+  \vspace*{-.35in}
+  \caption{The Expected Output of the \mainprogram{} Program.}~\label{fig:output}
   \vspace*{-.25in}
 \end{figure}
 
@@ -362,11 +349,11 @@ and writing, as further described in the \step{Evaluation} section of this assig
 instructor with documentation of the extenuating circumstances that you are facing, no late work will be considered
 towards your grade for this laboratory assignment.
 
-Please note that if you are completing this laboratory assignment on your own laptop the GatorGrader program will only
-run correctly if you have installed all of the programs on which it depends. You can see these dependencies (i.e.,
-Gradle, Java, Markdownlint, Proselint, and Python) by reading the documentation in your GitHub repository for this
-assignment. Note that assignment checking will still work with Travis CI even if you do not have these programs
-installed on your laptop. Please see the instructor or teaching assistant if you have trouble installing these programs.
+% Please note that if you are completing this laboratory assignment on your own laptop the GatorGrader program will only
+% run correctly if you have installed all of the programs on which it depends. You can see these dependencies (i.e.,
+% Gradle, Java, Markdownlint, Proselint, and Python) by reading the documentation in your GitHub repository for this
+% assignment. Note that assignment checking will still work with Travis CI even if you do not have these programs
+% installed on your laptop. Please see the instructor or teaching assistant if you have trouble installing these programs.
 
 \section*{Summary of the Required Deliverables}
 
@@ -380,13 +367,13 @@ Instead, this assignment invites you to submit, using GitHub, the following deli
 \item Stored in a Markdown file called \reflection{}, a one-paragraph response,
   each consisting of at least three sentences, for each of the stated questions.
 
-\item A properly documented, well-formatted, and correct version of
-  \mainprogramsource{} that meets all of the established requirements and
-  produces the desired output.
+\item A properly documented, well-formatted, and correct version of two Java
+  source code files that meet all of the established requirements and produces
+  the desired output.
 
-\item A properly documented, well-formatted, and correct version all of the
-  additional Java files needed to complete this assignment (e.g.,
-  \testprogramsource{}).
+% \item A properly documented, well-formatted, and correct version all of the
+%   additional Java files needed to complete this assignment (e.g.,
+%   \testprogramsource{}).
 
 \end{enumerate}
 
