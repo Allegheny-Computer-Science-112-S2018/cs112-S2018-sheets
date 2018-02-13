@@ -262,12 +262,16 @@ that the program correctly compiles, you will see that it does not produce the
 output in Figure~\ref{fig:output} and that many of the tests do not pass. What
 code is missing in the provided files?
 
-Ultimately, you will need to provide source code in both of the Java files
+Ultimately, you will need to implement source code in both of the Java files
 wherever you see the \command{TODO} label. For instance, the \testprogram{}
 requires you to implement two \program{isSorted} methods that determine if an
 array is sorted. Next, you must implement \program{InsertionSort.sort} methods
 that follow the outline in Code Fragment 3.6 to sort an array of either type
-\program{int[]} or \program{char[]}.
+\program{int[]} or \program{char[]}. It is important to note that these methods
+should use the \program{System.arraycopy} method to construct a ``shallow copy''
+of the array that is input to the \program{sort} method. Please refer to Section
+3.6 and the referenced JavaDoc documentation to learn more about how this method
+works.
 
 % If you get any error messages, go back to your text editor and figure out
 % what you mis-typed and fix it. Once you have solved the problem, make a note
