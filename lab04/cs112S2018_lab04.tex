@@ -264,14 +264,20 @@ code is missing in the provided files?
 
 Ultimately, you will need to implement source code in both of the Java files
 wherever you see the \command{TODO} label. For instance, the \testprogram{}
-requires you to implement two \program{isSorted} methods that determine if an
+requires you to implement two \program{isSorted}~methods that determine if an
 array is sorted. Next, you must implement \program{InsertionSort.sort} methods
 that follow the outline in Code Fragment 3.6 to sort an array of either type
 \program{int[]} or \program{char[]}. It is important to note that these methods
 should use the \program{System.arraycopy} method to construct a ``shallow copy''
 of the array that is input to the \program{sort} method. Please refer to Section
 3.6 and the referenced JavaDoc documentation to learn more about how this method
-works.
+works. You should also note that, at the outset, these sorting methods return
+the \program{source} variable---once you have implemented the sorting method for
+both data types you should change this to instead return the variable called
+\program{sorted}. As you complete this laboratory assignment, you goal is to
+proceed incrementally, adding the required code and then checking to see if an
+additional test passes. Once a new feature is working, please make sure that you
+commit your code with a descriptive message.
 
 % If you get any error messages, go back to your text editor and figure out
 % what you mis-typed and fix it. Once you have solved the problem, make a note
@@ -293,13 +299,14 @@ works.
 % of output? Can you see that it performs the array reversal correctly? If not,
 % then repair the program and re-build and re-run it.
 
-Once the program runs, please reflect on this process. What step did you find to
-be the most challenging? Why? You should write your reflections in a file,
-called \reflection{}, that uses the Markdown writing language. You can learn
-more about Markdown by viewing the aforementioned GitHub guide. To complete this
-aspect of the assignment, you should write one high-quality paragraph that
-reports on your experiences. Your \reflection{} file should also contain answers
-to other questions about \mainprogram{}'s implementation and testing.
+Once the program runs and the tests pass, please reflect on this process. What
+step did you find to be the most challenging? Why? You should write your
+reflections in a file, called \reflection{}, that uses the Markdown writing
+language. You can learn more about Markdown by viewing the aforementioned GitHub
+guide. To complete this aspect of the assignment, you should write one
+high-quality paragraph that reports on your experiences. Your \reflection{} file
+should also contain answers to other questions about \mainprogram{}'s
+implementation and testing.
 
 \begin{figure}[t]
   \centering
@@ -373,13 +380,9 @@ Instead, this assignment invites you to submit, using GitHub, the following deli
 \item Stored in a Markdown file called \reflection{}, a one-paragraph response,
   each consisting of at least three sentences, for each of the stated questions.
 
-\item A properly documented, well-formatted, and correct version of two Java
-  source code files that meet all of the established requirements and produces
-  the desired output.
-
-% \item A properly documented, well-formatted, and correct version all of the
-%   additional Java files needed to complete this assignment (e.g.,
-%   \testprogramsource{}).
+\item A properly documented and correct version of the two Java source files
+  (i.e., sorting methods and test suite) that meet all of the established
+  requirements and produce the desired output.
 
 \end{enumerate}
 
