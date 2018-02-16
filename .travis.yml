@@ -10,6 +10,7 @@ script:
 - latexmk -pdf -outdir=_build lab04/cs112S2018_lab04.tex
 - latexmk -pdf -outdir=_build practical01/cs112S2018_practical01.tex
 - latexmk -pdf -outdir=_build practical02/cs112S2018_practical02.tex
+- latexmk -pdf -outdir=_build practical03/cs112S2018_practical03.tex
 deploy:
   provider: releases
   api_key:
@@ -21,6 +22,7 @@ deploy:
     - _build/cs112S2018_lab04.pdf
     - _build/cs112S2018_practical01.pdf
     - _build/cs112S2018_practical02.pdf
+    - _build/cs112S2018_practical03.pdf
   skip_cleanup: true
   on:
     tags: true
