@@ -237,17 +237,15 @@ Please study the source code of the \mainprogram{} class. Can you see any
 obvious ways in which the implementation of this sorting algorithm is incorrect?
 You should run the test suite called \testprogram{} that is written in the JUnit
 testing framework. Please read each of the tests as they explain, in Java source
-code, the expected properties of a sorting algorithm. You should pay
-particularly close attention to the fact that the test cases use the array-based
-sorting algorithm that is provided  You should pay particularly close attention
-to the fact that the test cases use the array-based sorting algorithm that is
-provided You should pay particularly close attention to the fact that the test
-cases use the array-based sorting algorithm that is provided by the Java
-programming language to support the testing of the \mainprogram{}. You can run
-the test suite for the \mainprogram{} class by typing \gradletest{} in the
-terminal. Did you notice that many of the test cases do not pass? Please study
-the \testprogramsource{} to see if you can fix any implementation mistakes in
-the test suite. Now how many test cases are passing?
+code, the expected behavior of a sorting algorithm. You should pay particularly
+close attention to the fact that the test cases use the array-based sorting
+algorithm that is provided by the Java programming language to support the
+testing of the \mainprogram{}. Why is this a good approach to testing a new
+sorting algorithm? You can run the test suite for the \mainprogram{} class by
+typing \gradletest{} in the terminal. Did you notice that many of the test cases
+do not pass? Can you identify any common reason why the tests might fail? Please
+study the source code of \testprogramsource{} to see if you can find and fix any
+implementation mistakes in the test suite. Now how many test cases are passing?
 
 At this point, you should notice that many of the tests are still failing. This
 means that you will have to examine the source code of \mainprogram{} to
@@ -267,14 +265,14 @@ pass. Then, you can use \gradlerun{} to see the program's output.
 
 \section*{Checking the Correctness of Your Program and Writing}
 
-As verified by Checkstyle tool, the source code for the \mainprogram{} and its
-test suite must adhere to all of the requirements in the Google Java Style Guide
+As verified by Checkstyle tool, the source code for \mainprogram{} and its test
+suite must adhere to all of the requirements in the Google Java Style Guide
 available at \url{https://google.github.io/styleguide/javaguide.html}. Instead
 of requiring you to manually check that your deliverables adhere to these
 industry-accepted standards, GatorGrader makes it easy for you to automatically
 check if your submission meets the standards for correctness. For instance,
 GatorGrader will run the provided tests, check to ensure that \mainprogram{}
-produces exactly ten lines of output, and see that you committed to GitHub a
+produces exactly four lines of output, and see that you committed to GitHub a
 sufficient number of times when completing this assignment.
 
 To get started with the use of GatorGrader, type the command \gatorgraderstart{}
