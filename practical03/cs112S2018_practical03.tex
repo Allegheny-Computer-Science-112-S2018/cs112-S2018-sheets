@@ -220,7 +220,7 @@ instance, if the instructor ran the \command{git clone} command, it would look
 like:
 
 \begin{lstlisting}
-  git clone git@github.com:Allegheny-Computer-Science-112-S2018/computer-science-112-spring-2018-practical-2-gkapfham.git
+  git clone git@github.com:Allegheny-Computer-Science-112-S2018/computer-science-112-spring-2018-practical-3-gkapfham.git
 \end{lstlisting}
 
 After this command finishes, you can use \command{cd} to change into the new
@@ -231,43 +231,39 @@ automatically downloaded from GitHub. What files and directories do you see?
 What do you think is their purpose? Spend some time exploring, sharing your
 discoveries with a neighbor and a \mbox{teaching assistant}.
 
-\section*{Enhancing a Java Program that Calculates Summary Statistics}
+\section*{Repairing a Java Program that Sorts Arrays}
 
-Please study the source code of the \mainprogram, noticing that one of its
-methods is incomplete. That is, you will see that the program is missing an
-implementation of the \program{calculateVariance} method. Can you add in a
-correct version of this method? To learn more about how to perform a summation
-to calculate the variance of a list of \program{Double} values, please read the
-online article available at \url{https://www.wikihow.com/Calculate-Variance}.
-Specifically, the article's equation asks you to iterate through all of the
-values in an array so that you can subtract the mean from each data point and
-then square the result. You will need to ensure that the result from each
-iteration carries over to the next one. Then, you will perform a division and
-return this value.
-
+Please study the source code of the \mainprogram{} class. Can you see any
+obvious ways in which the implementation of this sorting algorithm is incorrect?
 You should run the test suite called \testprogram{} that is written in the JUnit
 testing framework. Please read each of the tests as they explain, in Java source
-code, the expected properties of the methods for calculating summary statistics.
-If you want to \step{build} your program you can type the command \gradlebuild{}
-in your terminal, thereby causing the Java compiler to check your program for
-errors and get it ready to run. If you see any error messages, go back to your
-text editor and figure out what you mis-typed and fix it. Oncer you have solved
-the problem, make a note of the error and the solution for resolving it. Re-save
-your program and then build it again by re-running the \gradlebuild{}. If you
-cannot build \mainprogram{} correctly, then please talk with a teaching
-assistant or the instructor. You can also run the test suite for the
-\mainprogram{} by typing \gradletest{} in the terminal. What is the purpose of
-each of these test cases? How do they check the output of the methods that
-calculate summary statistics? You should keep revising your implementation of
-\command{calculateVariance} until all tests pass.
+code, the expected properties of a sorting algorithm. You should pay
+particularly close attention to the fact that the test cases use the array-based
+sorting algorithm that is provided  You should pay particularly close attention
+to the fact that the test cases use the array-based sorting algorithm that is
+provided You should pay particularly close attention to the fact that the test
+cases use the array-based sorting algorithm that is provided by the Java
+programming language to support the testing of the \mainprogram{}. You can run
+the test suite for the \mainprogram{} class by typing \gradletest{} in the
+terminal. Did you notice that many of the test cases do not pass? Please study
+the \testprogramsource{} to see if you can fix any implementation mistakes in
+the test suite. Now how many test cases are passing?
 
-Once you resolve all of the building and testing errors, you can run your
-program by typing \gradlerun{} in the terminal window---this is the ``execute''
-step that will run your program and produce the designated output. Do you see
-that it produces the correct output with the expected numerical values? For
-instance, you program should output \command{This is the variance: 23.04}. If
-not, then please determine what is wrong and try to repair the program and
-re-build and re-run it.
+At this point, you should notice that many of the tests are still failing. This
+means that you will have to examine the source code of \mainprogram{} to
+determine what mistakes are lurking in its implementation. Please note that the
+two sorting methods contains several (different) mistakes that you should
+incrementally fix. Reading about \mainprogram{} on Wikipedia and reasoning about
+how the current implementation does not match the algorithm's expected behavior
+should help you to find and repair the defects. Remember, if you want to
+\step{build} your program you can type the command \gradlebuild{} in your
+terminal, thereby causing the Java compiler to check your program for errors and
+get it ready to run. If you see any error messages, go back to your text editor
+and figure out what you mis-typed and fix it. Once you have solved the problem,
+make a note of the error and the solution for resolving it. Re-save your program
+and then build it again by re-running the \gradlebuild{}. You should keep
+revising the implementation of \mainprogram's methods until all of the tests
+pass. Then, you can use \gradlerun{} to see the program's output.
 
 \section*{Checking the Correctness of Your Program and Writing}
 
@@ -302,8 +298,7 @@ changed and is ready for transfer to GitHub you would first type
 \gitcommitmainprogram{} in your terminal, followed by typing \gitpush{} and
 checking to see that the transfer to GitHub is successful. If you notice that
 transferring your \mainprogramsource{} to GitHub does not work, then please try
-to determine why, asking a teaching assistant or the course instructor for
-assistance, if necessary.
+to determine why, asking the course instructor for assistance, if necessary.
 
 After the course instructor enables \step{continuous integration} with a system called Travis CI, when you use the
 \gitpush{} command to transfer your source code to your GitHub repository, Travis CI will initialize a \step{build} of
@@ -333,7 +328,11 @@ Instead, this assignment invites you to submit, using GitHub, the following deli
   \setlength{\itemsep}{0in}
 
 \item A properly documented and correct version of \mainprogramsource{} that
-  meets the established requirements and produces the desired output.
+  meets the established requirements and produces the desired textual output.
+
+\item A properly documented and correct version of \testprogramsource{} that
+  meets the established requirements and demonstrates sorting method
+  correctness.
 
 \end{enumerate}
 
