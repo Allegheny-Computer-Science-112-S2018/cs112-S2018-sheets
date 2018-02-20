@@ -264,29 +264,29 @@ that generates the input array at the specified size. Next, you need to sort
 this array using the \program{sort} method provided by the \program{Sorter} that
 is a parameter to this method. Please make sure that you adopt the strategy in
 Code Fragment 4.1 to time the sorting algorithm. Finally, you need to record the
-timing results in the data table, ensure that the experiment will continue with
-the next size for the input array, and then go to the next round of the
-experiment campaign.
+timing results in the data table, ensure that the experiment campaign will
+continue with the next doubled size for the input array, and then go to the next
+round of the experiment campaign.
 
 You should also note that this assignment requires you to complete the
 implementation of a \program{ResultsTable} that can store the results from each
 run of your experiment campaign. To start your implementation of this class,
 please finish its constructor by creating the two-dimensional array and
-indicating that the first row of the table will start at zero. Finally, you
-must provide an implementation of the \program{public void addResult(long size,
-long timing)} method that will record a new row of data in the
-\program{ResultsTable} while also calculating the ``order of growth ratio''
-between the current data value and the previous value. Intuitively, this step is
-asking you to write source code that can calculate the third row of the table
-evident in Figure~\ref{fig:output}. As you are implementing this method, make
-sure that you take care to set the ratio for the first row to zero and to
-carefully avoid dividing by zero when computing this value.
+indicating that the first row of the table will start at zero. Finally, you must
+provide an implementation of the \program{public void addResult(long size, long
+timing)} method that will record a new row of data in the \program{ResultsTable}
+while also calculating the ``order of growth ratio'' between the current data
+value and the previous value. This step is asking you to write source code that
+can calculate the third row of the table evident in Figure~\ref{fig:output}.
+This ratio will help you to understand the algorithm's efficiency. As you are
+implementing this method, make sure that you take care to set the ratio for the
+first row to zero and avoid dividing by zero when computing this value.
 
 It is worth pointing out that your textbook contains several useful insights
-into the pattern that you should follow when making observations about the
-running time of the sorting algorithms. For instance, when describing the
-results from running an experiment, page 153 notes that ``[A]s the value of $n$
-is doubled, the running time of {\tt repeat1} typically increases more than
+into the pattern that you should follow when thinking about the running time of
+the two provided sorting algorithms. For instance, when describing the results
+from running an experiment, page 153 notes that ``[A]s the value of $n$ is
+doubled, the running time of {\tt repeat1} typically increases more than
 fourfold.'' What does this suggest about the likely ``worst-case time
 complexity'' of the {\tt repeat1} method? How can you apply this intuition to
 analyze the results that you collect when running an experiment?
