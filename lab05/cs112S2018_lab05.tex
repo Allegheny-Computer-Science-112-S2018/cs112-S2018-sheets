@@ -231,55 +231,37 @@ location, then you can type the command \command{cd ..}. Please continue to use
 the \command{cd} and \command{ls} commands to explore the files that you
 automatically downloaded from GitHub. What files and directories do you see?
 What do you think is their purpose? Spend some time exploring, sharing your
-discoveries with a neighbor and a \mbox{teaching assistant}.
+discoveries with a neighbor and a \mbox{teaching assistant}. Specifically, each
+student should draw a diagram to show the relationship between the Java classes
+provided for this laboratory assignment. Make sure that you have the instructor
+check your project diagram.
 
-\section*{Implementing and Testing an Array Sorting Program}
+\section*{Experimentally Evaluating the Performance of Array Sorting}
 
-% Now, can you draw a picture showing how these classes (i.e., both the test
-% suite and main class) are related? For instance, you should notice that the
-% \mainprogram{} has a test suite called \testprogram{} that is written in the
-% JUnit testing framework; please refer to Section 1.9 and the comments in the
-% source code of this test suite to learn more about how it works. Intuitively, a
-% Junit test suite has individual test cases, written as Java methods, that each
-% work to establish a confidence in the correctness of \mainprogram{}. Once you
-% understand how the test suite assesses the \mainprogram's correctness, you
-% should notice that this class is missing an implementation of the
-% \program{reverse} method. Please refer to page 95 of the textbook for a
-% suitable implementation of this method. Next, you will need to add a test case
-% to \testprogram{} that ensures that the program correctly performs a reversal
-% for \program{Integer[]} arrays. Finally, you must enhance the \program{main}
-% method in the \mainprogram{} class so that it produces the output that is given
-% in Figure~\ref{fig:output}.
+There are many \command{TODO} markers inside of the provided source code.
+Ultimately, it is your responsibility to read each of these and provide the
+required source code. With that said, the remainder of this section will provide
+some pointers to help you to implement the needed code. This assignment asks you
+to run experiments that produce output like that which Figure~\ref{fig:output}
+provides. Notably, this figure shows that there is a label for the name of the
+specific algorithm under study. As such, you should provide an implementation of
+the constructor for \program{BubbleSort} and \program{InsertionSort} classes
+that assigns the correct name to both of these algorithms. Next, you will notice
+that the \program{main} method in the \program{Experiment} class is only
+implemented half of the way. This means that you must provide a complete
+implementation that follows the pattern for the first half of the method and
+correctly runs an experiment for the \program{InsertionSort} algorithm as well.
+Any questions so far?
 
-Please use a text editor to study the source code of the \mainprogram{} class,
-noticing that some of its methods are incomplete. Now, if you want to
-\step{build} your program you can type the command \gradlebuild{} in your
-terminal, thereby causing the Java compiler to check your program for errors and
-get it ready to run. At this point, you will notice that your program has
-compiler errors indicating that the source code in the \program{main} method of
-\mainprogram{} is not correct. So, you will need to correctly call the
-\program{Experiment.sort} method in \program{main}. However, once you ensure
-that the program correctly compiles, you will see that it does not produce the
-output in Figure~\ref{fig:output} and that many of the tests do not pass. What
-code is missing in the provided files?
-
-Ultimately, you will need to implement source code in both of the Java files
-wherever you see the \command{TODO} label. For instance, the \testprogram{}
-requires you to implement two \program{isSorted} ``helper'' methods that
-determine if an array is sorted. Next, you must implement an
-\program{Experiment.sort} that follows the outline in Code Fragment 3.6 to
-sort an array of either type \program{int[]} or \program{char[]}. It is
-important to note that these methods should use the \program{System.arraycopy}
-method to construct a ``shallow copy'' of the array that is input to the
-\program{sort} method. Please refer to Section 3.6 and the referenced JavaDoc
-documentation to learn more about how this method works. You should also note
-that, at the outset, these sorting methods return the \program{source}
-variable---once you have implemented the sorting method for both data types you
-should change this to instead return the variable called \program{sorted}. As
-you complete this laboratory assignment, you goal is to proceed incrementally,
-adding the required code and then checking to see if an additional test passes.
-Once a new feature is working, please make sure that you commit your code with a
-descriptive message.
+Now, if you want to \step{build} your program you can type the command
+\gradlebuild{} in your terminal, thereby causing the Java compiler to check your
+program for errors and get it ready to run. At this point, you will notice that
+your program has compiler errors indicating that the source code in the
+\program{main} method of \mainprogram{} is not correct. So, you will need to
+correctly call the \program{Experiment.sort} method in \program{main}. However,
+once you ensure that the program correctly compiles, you will see that it does
+not produce the output in Figure~\ref{fig:output} and that many of the tests do
+not pass. What code is missing in the provided files?
 
 Once the program runs and the tests pass, please reflect on this process. What
 step did you find to be the most challenging? Why? You should write your
