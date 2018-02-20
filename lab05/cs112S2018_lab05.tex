@@ -315,7 +315,6 @@ testing, and use.
 \begin{figure}[t]
   \centering
   \begin{verbatim}
-
   Starting a campaign of experiments with BubbleSort ...
     Running round 0 with input size 250
     Running round 1 with input size 500
@@ -333,15 +332,15 @@ testing, and use.
 
   Size (#)        Timing (ms)     Ratio (#)
   250             2               0
-  500             5               2
-  1000            5               1
-  2000            11              2
-  4000            27              2
-  8000            119             4
-  16000           548             4
-  32000           2565            4
-  64000           10219           4
-  128000          38563           4
+  500             2               1
+  1000            4               2
+  2000            10              3
+  4000            27              3
+  8000            120             4
+  16000           529             4
+  32000           2438            5
+  64000           10107           4
+  128000          39215           4
   \end{verbatim}
   \vspace*{-.35in}
   \caption{A Portion of the Expected Output of the \mainprogram{} Program.}~\label{fig:output}
@@ -406,7 +405,8 @@ Instead, this assignment invites you to submit, using GitHub, the following deli
   \setlength{\itemsep}{0in}
 
 \item Stored in a Markdown file called \reflection{}, a one-paragraph response,
-  each consisting of at least three sentences, for each of the stated questions.
+  for each of the stated questions. Make sure to include the requested results
+  in a fenced code block.
 
 \item A properly documented and correct version of all the Java source files
   (i.e., sorting methods, experiments, and tests) that meets the set
