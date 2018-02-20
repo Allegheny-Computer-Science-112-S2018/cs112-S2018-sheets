@@ -56,7 +56,7 @@
 \newcommand{\gitpush}{\command{git push}}
 \newcommand{\gitpull}{\command{git pull}}
 
-\newcommand{\gitcommitmainprogram}{\command{git commit src/main/java/labfive/Experiment.java -m "Your
+\newcommand{\gitcommitmainprogram}{\command{git commit src/main/java/labfive/experiment/Experiment.java -m "Your
 descriptive commit message"}}
 
 % Use this when displaying a new command
@@ -118,12 +118,12 @@ descriptive commit message"}}
 \section*{Objectives}
 
 To continue to practice using GitHub to access the files for an assignment. You
-will complete a programming project using source code provided in the textbook,
-ultimately implementing and testing a complete solution for the sorting arrays
-of two primitive types. You will also continue to learn how to implement and
-test a Java program and to write a Markdown file, practicing how to use an
-automated grading tool to assess your progress towards correctly completing the
-project.
+will complete a programming project using source code provided in the textbook
+and by the course instructor ultimately implementing a framework for
+experimentally evaluating two sorting algorithms. You will also continue to
+learn how to implement and test a Java program and to write a Markdown file,
+practicing how to use an automated grading tool to assess your progress towards
+correctly completing the project.
 
 \section*{Suggestions for Success}
 
@@ -181,14 +181,15 @@ project.
 \section*{Reading Assignment}
 
 If you have not done so already, please read all of the relevant ``GitHub
-Guides'', available at \url{https://guides.github.com/}, that explain how to
-use many of the features that GitHub provides. In particular, please make sure
-that you have read guides such as ``Mastering Markdown'' and ``Documenting Your
+Guides'', available at \url{https://guides.github.com/}, that explain how to use
+many of the features that GitHub provides. In particular, please make sure that
+you have read guides such as ``Mastering Markdown'' and ``Documenting Your
 Projects on GitHub''; each of them will help you to understand how to use both
-GitHub and GitHub Classroom. To do well on this assignment, you should also
-read Chapter 3 in the textbook, paying particularly close attention to Sections
-3.1 and 3.6. Please see the course instructor or one of the teaching assistants
-if you have questions about this reading assignment.
+GitHub and GitHub Classroom. To do well on this assignment, you should also read
+Chapter 3 in the textbook, paying particularly close attention to Sections 3.1
+and 3.6. You should also read Section 4.1, focusing on Code Fragment 4.1 and the
+commentary for Figure 4.1. Please see the instructor or one of the teaching
+assistants if you have questions about this reading assignment.
 
 \section*{Accessing the Laboratory Assignment on GitHub}
 
@@ -202,7 +203,7 @@ new GitHub repository for this assignment, please click the green ``Accept''
 button and then click the link that is prefaced with the label ``Your assignment
 has been created here''. If you accepted the assignment and correctly followed
 these steps, you should have created a GitHub repository with a name like
-``Allegheny-Computer-Science-112-Spring-2018/computer-science-112-spring-2018-lab-4-gkapfham''.
+``Allegheny-Computer-Science-112-Spring-2018/computer-science-112-spring-2018-lab-5-gkapfham''.
 Unless you provide the instructor with documentation of the extenuating
 circumstances that you are facing, not accepting the assignment means that you
 automatically receive a failing grade for it.
@@ -221,7 +222,7 @@ instructor ran the \command{git clone} command in the terminal, it would look
 like:
 
 \begin{lstlisting}
-  git clone git@github.com:Allegheny-Computer-Science-112-S2018/computer-science-112-spring-2018-lab-4-gkapfham.git
+  git clone git@github.com:Allegheny-Computer-Science-112-S2018/computer-science-112-spring-2018-lab-5-gkapfham.git
 \end{lstlisting}
 
 After this command finishes, you can use \command{cd} to change into the new
@@ -292,13 +293,36 @@ implementation and testing.
 \begin{figure}[t]
   \centering
   \begin{verbatim}
-  Before: [C, E, B, D, A, I, J, L, K, H, G, F]
-  After : [A, B, C, D, E, F, G, H, I, J, K, L]
-  Before: [1, 2, 4, 4, 9, 10, -10, 3, 8, 7, 20, 0]
-  After : [-10, 0, 1, 2, 3, 4, 4, 7, 8, 9, 10, 20]
+
+  Starting a campaign of experiments with BubbleSort ...
+    Running round 0 with input size 250
+    Running round 1 with input size 500
+    Running round 2 with input size 1000
+    Running round 3 with input size 2000
+    Running round 4 with input size 4000
+    Running round 5 with input size 8000
+    Running round 6 with input size 16000
+    Running round 7 with input size 32000
+    Running round 8 with input size 64000
+    Running round 9 with input size 128000
+  ... Finishing a campaign of experiments with BubbleSort
+
+  Results of an experiment campaign with BubbleSort:
+
+  Size (#)        Timing (ms)     Ratio (#)
+  250             2               0
+  500             5               2
+  1000            5               1
+  2000            11              2
+  4000            27              2
+  8000            119             4
+  16000           548             4
+  32000           2565            4
+  64000           10219           3
+  128000          38563           3
   \end{verbatim}
   \vspace*{-.35in}
-  \caption{The Expected Output of the \mainprogram{} Program.}~\label{fig:output}
+  \caption{A Portion of the Expected Output of the \mainprogram{} Program.}~\label{fig:output}
   \vspace*{-.25in}
 \end{figure}
 
@@ -355,8 +379,16 @@ Instead, this assignment invites you to submit, using GitHub, the following deli
 \item Stored in a Markdown file called \reflection{}, a one-paragraph response,
   each consisting of at least three sentences, for each of the stated questions.
 
-\item A properly documented and correct version of the two Java source files
-  (i.e., sorting methods and test suite) that meet all of the established
+\item A properly documented and correct version of all the Java source files
+  :w
+  :w
+  :q
+
+:w
+:quit
+:w
+:q
+  (i.e., sorting methods, experiments, and test suite) that meet all of the established
   requirements and produce the desired output.
 
 \end{enumerate}
