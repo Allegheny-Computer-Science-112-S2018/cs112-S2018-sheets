@@ -236,7 +236,7 @@ student should draw a diagram to show the relationship between the Java classes
 provided for this laboratory assignment. Make sure that you have the instructor
 check your project diagram.
 
-\section*{Experimentally Evaluating the Performance of Array Sorting}
+\section*{Evaluating the Performance of String Concatenation}
 
 There are many \command{TODO} markers inside of the provided source code.
 Ultimately, it is your responsibility to read each of these and provide the
@@ -244,103 +244,58 @@ required source code. With that said, the remainder of this section will provide
 some pointers to help you to implement the needed code. This assignment asks you
 to run experiments that produce output like that which Figure~\ref{fig:output}
 provides. Notably, this figure shows that there is a label for the name of the
-specific algorithm under study. As such, you should provide an implementation of
-the constructor for the \program{BubbleSort} and \program{InsertionSort} classes
-that assigns the correct name to both of these algorithms. Next, you will notice
-that the \program{main} method in the \program{Experiment} class is only
-implemented half of the way. This means that you must provide a complete
-implementation that follows the pattern for the first half of the method and
-correctly runs an experiment for the \program{InsertionSort} algorithm as well.
-Any questions so far?
-
-There are several \command{TODO} markers inside of the \program{RunCampaign}
-class. First, you need to implement a method that can randomly generate an
-\program{int[]} array. You can refer to the test suite for this laboratory
-assignment and from previous assignments to learn how to write this method. The
-next step is one of the most challenging for this assignment! Please review all
-of the \command{TODO} markers in the \program{run} method of the
-\program{RunCampaign} class and notice that you need to first call the method
-that generates the input array at the specified size. Next, you need to sort
-this array using the \program{sort} method provided by the \program{Sorter} that
-is a parameter to this method. Please make sure that you adopt the strategy in
-Code Fragment 4.1 to time the sorting algorithm. Finally, you need to record the
-timing results in the data table, ensure that the experiment campaign will
-continue with the next doubled size for the input array, and then go to the next
-round of the experiment campaign.
-
-You should also note that this assignment requires you to complete the
-implementation of a \program{ResultsTable} that can store the results from each
-round of your experiment campaign. To start your implementation of this class,
-please finish its constructor by creating the two-dimensional array and
-indicating that the first row of the table will start at zero. Finally, you must
-provide an implementation of the \program{public void addResult(long size, long
-timing)} method that will record a new row of data in the \program{ResultsTable}
-while also calculating the ``order of growth ratio'' between the current data
-value and the previous value. This step is asking you to write source code that
-can calculate the third row of the table evident in Figure~\ref{fig:output}.
-This ratio will help you to understand the algorithm's efficiency. As you are
-implementing this method, make sure that you take care to set the ratio for the
-first row to zero and avoid dividing by zero when computing this value.
+specific algorithm under study. As such, you should use the source code in Code
+Fragment 4.2 to provide an implementation of the source code needed for the
+\program{IterativeRepeater} and \program{AppendRepeater}. Please note that the
+\program{repeat1} and \program{repeat2} methods in this Code Fragment are not
+used in the provided source code because they are not descriptive enough. As
+such, you will need to ensure that you put the correct method in the correct
+class and, of course, adhere to Google's style guide for writing a Java program.
 
 It is worth pointing out that your textbook contains several useful insights
 into the pattern that you should follow when thinking about the running time of
-the two provided sorting algorithms. For instance, when describing the results
+the two provided repeating algorithms. For instance, when describing the results
 from running an experiment, page 153 notes that ``[A]s the value of $n$ is
 doubled, the running time of {\tt repeat1} typically increases more than
 fourfold.'' What does this suggest about the likely ``worst-case time
 complexity'' of the {\tt repeat1} method? How can you apply this intuition to
-analyze the results that you collect when running an experiment?
+analyze the results that you collect when running an experiment? Additionally,
+page 172 includes the following statement when describing the performance of
+{\tt repeat2}: ``the running times in that table $\ldots$ demonstrate a trend of
+approximately doubling each time the problem size doubles.'' Again, what would
+this observation suggest about the likely worst-case time complexity of {\tt
+repeat2}? Do you have any questions about this thought process?
 
-% Additionally, page 172 includes the following statement when describing the
-% performance of {\tt repeat2}: ``the running times in that table $\ldots$
-% demonstrate a trend of approximately doubling each time the problem size
-% doubles.'' Again, what would this observation suggest about the likely
-% worst-case time complexity of {\tt repeat2}?
-
-Remember, if you want to \step{build} your program you can type the command
-\gradlebuild{} in your terminal, thereby causing the Java compiler to check your
-program for errors and get it ready to run. If you notice that some of the test
-cases do not pass, please improve your implementation until all of the tests
-pass and your program's output looks similar to that which is provided in
-Figure~\ref{fig:output}. Once the program runs and the tests pass, please
-reflect on this process. What step did you find to be the most challenging? Why?
-You should write your reflections in a file, called \reflection{}, that uses the
-Markdown writing language. You can learn more about Markdown by viewing the
-aforementioned GitHub guide. To complete this part of the assignment, you should
-write one paragraph that reports on your experiences. Your \reflection{} file
-should also have answers to the questions about \mainprogram{}'s implementation,
-testing, and use.
+% Remember, if you want to \step{build} your program you can type the command
+% \gradlebuild{} in your terminal, thereby causing the Java compiler to check your
+% program for errors and get it ready to run. If you notice that some of the test
+% cases do not pass, please improve your implementation until all of the tests
+% pass and your program's output looks similar to that which is partially provided in
+% Figure~\ref{fig:output}. Once the program runs and the tests pass, please make
+% sure that you understand the data that this program is producing as output.
 
 \begin{figure}[t]
   \centering
   \begin{verbatim}
-  Starting a campaign of experiments with BubbleSort ...
-    Running round 0 with input size 250
-    Running round 1 with input size 500
-    Running round 2 with input size 1000
-    Running round 3 with input size 2000
-    Running round 4 with input size 4000
-    Running round 5 with input size 8000
-    Running round 6 with input size 16000
-    Running round 7 with input size 32000
-    Running round 8 with input size 64000
-    Running round 9 with input size 128000
-  ... Finishing a campaign of experiments with BubbleSort
 
-  Results of an experiment campaign with BubbleSort:
+
+  Results of an experiment campaign with IterativeRepeater:
 
   Size (#)        Timing (ms)     Ratio (#)
-  250             2               0
-  500             2               1
-  1000            4               2
-  2000            10              3
-  4000            27              3
-  8000            120             4
-  16000           529             4
-  32000           2438            5
-  64000           10107           4
-  128000          39215           4
+  250             0               0
+  500             3               0
+  1000            1               0
+  2000            4               4
+  4000            14              4
+  8000            45              3
+  16000           152             3
+  32000           621             4
+  64000           1480            2
+  128000          2466            2
+  256000          12242           5
+  512000          57788           5
   \end{verbatim}
+
   \vspace*{-.35in}
   \caption{A Portion of the Expected Output of the \mainprogram{} Program.}~\label{fig:output}
   \vspace*{-.25in}
