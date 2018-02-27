@@ -244,17 +244,23 @@ experiment campaign) can be reused as part of this assignment.
 There are many \command{TODO} markers inside of the provided source code.
 Ultimately, it is your responsibility to read each of these and provide the
 required source code. With that said, the remainder of this section will provide
-some pointers to help you to implement the needed code. 
+some pointers to help you to implement the needed code. First, you should know
+that you must implement a \program{PasswordChecker} class and experimentally
+evaluate it through a doubling experiment. The \program{PasswordChecker} must
+enforce the rule that the input password must contain at least one of the
+following: a digit, an uppercase letter, a lowercase letter, and a special
+symbol (i.e., \program{@}, \program{#}, \program{\$}, or \program{#}). The
+password must contain at least six characters.
 
 It is worth pointing out that your textbook contains several useful insights
 into the pattern that you should follow when thinking about the running time of
-the two provided sorting algorithms. For instance, when describing the results
-from running an experiment, page 153 notes that ``[A]s the value of $n$ is
-doubled, the running time of {\tt repeat1} typically increases more than
+the \program{PasswordChecker} that you implement. For instance, when describing
+the results from running an experiment, page 153 notes that ``[A]s the value of
+$n$ is doubled, the running time of {\tt repeat1} typically increases more than
 fourfold.'' What does this suggest about the likely ``worst-case time
-complexity'' of the {\tt repeat1} method? How can you apply this intuition to
-analyze the results that you collect when running an experiment? How can you
-apply what you learned in previous assignments to this assignment's experiments?
+complexity'' of {\tt repeat1}? How can you apply this intuition to analyze the
+results that you collect when running an experiment? How can you apply what you
+learned in prior experiments to this assignment's experiments?
 
 % Additionally, page 172 includes the following statement when describing the
 % performance of {\tt repeat2}: ``the running times in that table $\ldots$
