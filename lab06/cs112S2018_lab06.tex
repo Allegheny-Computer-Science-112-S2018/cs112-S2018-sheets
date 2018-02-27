@@ -235,53 +235,16 @@ What do you think is their purpose? Spend some time exploring, sharing your
 discoveries with a neighbor and a \mbox{teaching assistant}. Specifically, each
 student should draw a diagram to show the relationship between the Java classes
 provided for this laboratory assignment. Make sure that you have the instructor
-check your project diagram.
+check your project diagram. Your diagram should note what parts of the Java
+source code from your previous assignments (e.g., the methods for running an
+experiment campaign) can be reused as part of this assignment.
 
-\section*{Experimentally Evaluating the Performance of Array Sorting}
+\section*{Experimentally Evaluating the Performance of Password Checking}
 
 There are many \command{TODO} markers inside of the provided source code.
 Ultimately, it is your responsibility to read each of these and provide the
 required source code. With that said, the remainder of this section will provide
-some pointers to help you to implement the needed code. This assignment asks you
-to run experiments that produce output like that which Figure~\ref{fig:output}
-provides. Notably, this figure shows that there is a label for the name of the
-specific algorithm under study. As such, you should provide an implementation of
-the constructor for the \program{BubbleSort} and \program{InsertionSort} classes
-that assigns the correct name to both of these algorithms. Next, you will notice
-that the \program{main} method in the \program{Experiment} class is only
-implemented half of the way. This means that you must provide a complete
-implementation that follows the pattern for the first half of the method and
-correctly runs an experiment for the \program{InsertionSort} algorithm as well.
-Any questions so far?
-
-There are several \command{TODO} markers inside of the \program{RunCampaign}
-class. First, you need to implement a method that can randomly generate an
-\program{int[]} array. You can refer to the test suite for this laboratory
-assignment and from previous assignments to learn how to write this method. The
-next step is one of the most challenging for this assignment! Please review all
-of the \command{TODO} markers in the \program{run} method of the
-\program{RunCampaign} class and notice that you need to first call the method
-that generates the input array at the specified size. Next, you need to sort
-this array using the \program{sort} method provided by the \program{Sorter} that
-is a parameter to this method. Please make sure that you adopt the strategy in
-Code Fragment 4.1 to time the sorting algorithm. Finally, you need to record the
-timing results in the data table, ensure that the experiment campaign will
-continue with the next doubled size for the input array, and then go to the next
-round of the experiment campaign.
-
-You should also note that this assignment requires you to complete the
-implementation of a \program{ResultsTable} that can store the results from each
-round of your experiment campaign. To start your implementation of this class,
-please finish its constructor by creating the two-dimensional array and
-indicating that the first row of the table will start at zero. Finally, you must
-provide an implementation of the \program{public void addResult(long size, long
-timing)} method that will record a new row of data in the \program{ResultsTable}
-while also calculating the ``order of growth ratio'' between the current data
-value and the previous value. This step is asking you to write source code that
-can calculate the third row of the table evident in Figure~\ref{fig:output}.
-This ratio will help you to understand the algorithm's efficiency. As you are
-implementing this method, make sure that you take care to set the ratio for the
-first row to zero and avoid dividing by zero when computing this value.
+some pointers to help you to implement the needed code. 
 
 It is worth pointing out that your textbook contains several useful insights
 into the pattern that you should follow when thinking about the running time of
@@ -290,7 +253,8 @@ from running an experiment, page 153 notes that ``[A]s the value of $n$ is
 doubled, the running time of {\tt repeat1} typically increases more than
 fourfold.'' What does this suggest about the likely ``worst-case time
 complexity'' of the {\tt repeat1} method? How can you apply this intuition to
-analyze the results that you collect when running an experiment?
+analyze the results that you collect when running an experiment? How can you
+apply what you learned in previous assignments to this assignment's experiments?
 
 % Additionally, page 172 includes the following statement when describing the
 % performance of {\tt repeat2}: ``the running times in that table $\ldots$
@@ -300,17 +264,14 @@ analyze the results that you collect when running an experiment?
 
 Remember, if you want to \step{build} your program you can type the command
 \gradlebuild{} in your terminal, thereby causing the Java compiler to check your
-program for errors and get it ready to run. If you notice that some of the test
-cases do not pass, please improve your implementation until all of the tests
-pass and your program's output looks similar to that which is provided in
-Figure~\ref{fig:output}. Once the program runs and the tests pass, please
-reflect on this process. What step did you find to be the most challenging? Why?
-You should write your reflections in a file, called \reflection{}, that uses the
-Markdown writing language. You can learn more about Markdown by viewing the
-aforementioned GitHub guide. To complete this part of the assignment, you should
-write one paragraph that reports on your experiences. Your \reflection{} file
-should also have answers to the questions about \mainprogram{}'s implementation,
-testing, and use.
+program for errors and get it ready to run. Once the program runs and the tests
+pass, please reflect on this process. What step did you find to be the most
+challenging? Why? You should write your reflections in a file, called
+\reflection{}, that uses the Markdown writing language. You can learn more about
+Markdown by viewing the aforementioned GitHub guide. To complete this part of
+the assignment, you should write one paragraph that reports on your experiences.
+Your \reflection{} file should also have answers to the questions about
+\mainprogram{}'s implementation, testing, and use.
 
 \section*{Checking the Correctness of Your Program and Writing}
 
