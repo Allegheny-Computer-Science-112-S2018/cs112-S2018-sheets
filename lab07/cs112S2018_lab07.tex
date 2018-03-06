@@ -247,9 +247,9 @@ check your project diagram.
 
 There are many \command{TODO} markers inside of the provided source code.
 Ultimately, it is your responsibility to read each of these and provide the
-required source code. With that said, the remainder of this section will provide
-some pointers to help you to implement the needed code. Specifically, this
-assignment asks you to run experiments that produce output like that which
+required Java source code. With that said, the remainder of this section will
+provide some pointers to help you to implement the needed code. Specifically,
+this assignment asks you to run experiments that produce output like that which
 Figure~\ref{fig:output} provides. In particular, you will implement, test, and
 experimentally study a recursive and an iterative implementation of a method
 that can calculate specific values from the Fibonacci sequence. This well-known
@@ -260,18 +260,18 @@ equation $F_n = F_{n-1} + F_{n-2}$. Notably, this equation is recursive in
 nature because the {\em n}-th value is defined in terms of the two previous
 values.
 
-Following this recursive equation, you can provide an implementation of the
+Following this recursive equation, you can create an implementation of the
 \program{public long compute(int value)} method in the
 \program{RecursiveFibonacciComputation} class. Make sure that your
 implementation of this method handles the cases when the \program{value}
 parameter is zero, greater than zero but less than or equal to two, and then
 greater than two. Critically, please ensure that your implementation of this
-method in \program{RecursiveFibonacciComputation} calls itself following the
-example provided in Code Fragment 5.13 in the textbook. As in previous
-assignments, please make sure that you correct set the name of this class so
-that it integrates correctly in the experimentation framework. Finally, make
-sure that you understand how this Java class relates to the others that are
-provided for this assignment. Please see the instructor if you have questions
+method in \program{RecursiveFibonacciComputation} recursively calls itself
+following the example provided in Code Fragment 5.13 in the textbook. As in
+previous assignments, please make sure that you correctly set the name of this
+class so that it integrates correctly into the experimentation framework. Finally,
+make sure that you understand how this Java class relates to the others that are
+furnished for this assignment. Please see the instructor if you have questions
 about these steps.
 
 Now you should implement the \program{compute} method in the
@@ -288,11 +288,11 @@ learn more about the numerical values in the Fibonacci sequence are encouraged
 to visit the web site \url{http://planetmath.org/listoffibonaccinumbers}. Once
 you have implemented methods that pass the test suite and compute the correct
 values, you are ready to run an experiment. Please proceed cautiously as you run
-the experiments: one of the algorithms is not efficient, this requiring extended
-periods of time to run an experiment campaign. With that said, you should
-determine what inputs lead to poor performance and then explain why this poor
-performance is evident; reviewing Section 5.5 will aid you in understanding this
-algorithm's behavior.
+the experiments: one of the algorithms is not efficient, thus potentially
+requiring extended periods of time to run an experiment campaign. With that
+said, you should determine what inputs lead to poor performance and then explain
+why this poor performance is evident; reviewing Section 5.5 should help you in
+understanding this algorithm's behavior.
 
 % There are several \command{TODO} markers inside of the \program{RunCampaign}
 % class. First, you need to implement a method that can randomly generate an
