@@ -260,34 +260,34 @@ implementation that follows the pattern for the first half of the method and
 correctly runs an experiment for the \program{InsertionSort} algorithm as well.
 Any questions so far?
 
-There are several \command{TODO} markers inside of the \program{RunCampaign}
-class. First, you need to implement a method that can randomly generate an
-\program{int[]} array. You can refer to the test suite for this laboratory
-assignment and from previous assignments to learn how to write this method. The
-next step is one of the most challenging for this assignment! Please review all
-of the \command{TODO} markers in the \program{run} method of the
-\program{RunCampaign} class and notice that you need to first call the method
-that generates the input array at the specified size. Next, you need to sort
-this array using the \program{sort} method provided by the \program{Sorter} that
-is a parameter to this method. Please make sure that you adopt the strategy in
-Code Fragment 4.1 to time the sorting algorithm. Finally, you need to record the
-timing results in the data table, ensure that the experiment campaign will
-continue with the next doubled size for the input array, and then go to the next
-round of the experiment campaign.
+% There are several \command{TODO} markers inside of the \program{RunCampaign}
+% class. First, you need to implement a method that can randomly generate an
+% \program{int[]} array. You can refer to the test suite for this laboratory
+% assignment and from previous assignments to learn how to write this method. The
+% next step is one of the most challenging for this assignment! Please review all
+% of the \command{TODO} markers in the \program{run} method of the
+% \program{RunCampaign} class and notice that you need to first call the method
+% that generates the input array at the specified size. Next, you need to sort
+% this array using the \program{sort} method provided by the \program{Sorter} that
+% is a parameter to this method. Please make sure that you adopt the strategy in
+% Code Fragment 4.1 to time the sorting algorithm. Finally, you need to record the
+% timing results in the data table, ensure that the experiment campaign will
+% continue with the next doubled size for the input array, and then go to the next
+% round of the experiment campaign.
 
-You should also note that this assignment requires you to complete the
-implementation of a \program{ResultsTable} that can store the results from each
-round of your experiment campaign. To start your implementation of this class,
-please finish its constructor by creating the two-dimensional array and
-indicating that the first row of the table will start at zero. Finally, you must
-provide an implementation of the \program{public void addResult(long size, long
-timing)} method that will record a new row of data in the \program{ResultsTable}
-while also calculating the ``order of growth ratio'' between the current data
-value and the previous value. This step is asking you to write source code that
-can calculate the third row of the table evident in Figure~\ref{fig:output}.
-This ratio will help you to understand the algorithm's efficiency. As you are
-implementing this method, make sure that you take care to set the ratio for the
-first row to zero and avoid dividing by zero when computing this value.
+% You should also note that this assignment requires you to complete the
+% implementation of a \program{ResultsTable} that can store the results from each
+% round of your experiment campaign. To start your implementation of this class,
+% please finish its constructor by creating the two-dimensional array and
+% indicating that the first row of the table will start at zero. Finally, you must
+% provide an implementation of the \program{public void addResult(long size, long
+% timing)} method that will record a new row of data in the \program{ResultsTable}
+% while also calculating the ``order of growth ratio'' between the current data
+% value and the previous value. This step is asking you to write source code that
+% can calculate the third row of the table evident in Figure~\ref{fig:output}.
+% This ratio will help you to understand the algorithm's efficiency. As you are
+% implementing this method, make sure that you take care to set the ratio for the
+% first row to zero and avoid dividing by zero when computing this value.
 
 % It is worth pointing out that your textbook contains several useful insights
 % into the pattern that you should follow when thinking about the running time of
