@@ -1,11 +1,11 @@
 # cs112-S2018-sheets
 
 This repository contains all of the laboratory assignment sheets for Computer
-Science 112 Fall 2017. Each directory in this repository contains the LaTeX
+Science 112 Spring 2018Each directory in this repository contains the LaTeX
 source code for a laboratory assignment designed for use with [GitHub
 Classroom](https://classroom.github.com/). To learn more about the course in
 which these assignments were completed, please visit the [Computer Science 112
-Fall 2017 GitHub
+Spring 2018 GitHub
 Organization](https://github.com/Allegheny-Computer-Science-112-S2018). All of
 the LaTeX files in this repository are automatically compiled with [Travis
 CI](https://travis-ci.org/), thus ensuring that they compile correctly and,
