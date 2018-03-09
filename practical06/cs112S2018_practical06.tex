@@ -18,7 +18,7 @@
 % Edit these commands to give the name to the main program
 
 \newcommand{\mainprogram}{\lstinline{Experiment}}
-\newcommand{\mainprogramsource}{\lstinline{src/main/java/labseven/experiment/Experiment.java}}
+\newcommand{\mainprogramsource}{\lstinline{src/main/java/practicalsix/experiment/Experiment.java}}
 
 % Edit these commands to give the main program's output details
 
@@ -27,7 +27,7 @@
 % Edit these commands to give the name to the test suite
 
 \newcommand{\testprogram}{\lstinline{TestExperiment}}
-\newcommand{\testprogramsource}{\lstinline{src/test/java/labseven/TestExperiment.java}}
+\newcommand{\testprogramsource}{\lstinline{src/test/java/practicalsix/TestExperiment.java}}
 
 % Edit this commands to describe key deliverables
 
@@ -56,7 +56,7 @@
 \newcommand{\gitpush}{\command{git push}}
 \newcommand{\gitpull}{\command{git pull}}
 
-\newcommand{\gitcommitmainprogram}{\command{git commit src/main/java/labseven/experiment/Experiment.java -m "Your
+\newcommand{\gitcommitmainprogram}{\command{git commit src/main/java/practicalsix/experiment/Experiment.java -m "Your
 descriptive commit message"}}
 
 % Use this when displaying a new command
@@ -118,17 +118,17 @@ descriptive commit message"}}
 \section*{Objectives}
 
 To continue to practice using GitHub to access the files for an assignment. You
-will complete a programming project using source code provided in the textbook
-and by the course instructor ultimately implementing a framework for
-experimentally evaluating two algorithms for arithmetic computation.
-Specifically, you will study both an iterative and a recursive implementation of
-Java programs that calculate numbers in the Fibonacci sequence. You will also
+will complete a programming project using the minimal source code provided by
+the course instructor ultimately implementing a framework for experimentally
+evaluating two algorithms for arithmetic computation. Specifically, you will
+create and test both an iterative and a recursive implementation of Java
+programs that calculate numbers in the Factorial sequence. You will also
 practice creating a data table and calculating an order of growth ratio, honing
 your ability to analytically and empirically evaluate the worst-case time
 complexity of an algorithm. Finally, you will continue to learn how to implement
-and test a Java program and to write a Markdown file, practicing how to use an
-automated grading tool to assess your progress towards correctly completing the
-project.
+and test a Java program, practicing the creation of Java classes on your own and
+using an automated grading tool to assess your progress towards correctly
+completing the project.
 
 \section*{Suggestions for Success}
 
@@ -210,7 +210,7 @@ new GitHub repository for this assignment, please click the green ``Accept''
 button and then click the link that is prefaced with the label ``Your assignment
 has been created here''. If you accepted the assignment and correctly followed
 these steps, you should have created a GitHub repository with a name like
-``Allegheny-Computer-Science-112-Spring-2018/computer-science-112-spring-2018-lab-7-gkapfham''.
+``Allegheny-Computer-Science-112-Spring-2018/computer-science-112-spring-2018-practical-6-gkapfham''.
 Unless you provide the instructor with documentation of the extenuating
 circumstances that you are facing, not accepting the assignment means that you
 automatically receive a failing grade for it.
@@ -229,7 +229,7 @@ instructor ran the \command{git clone} command in the terminal, it would look
 like:
 
 \begin{lstlisting}
-  git clone git@github.com:Allegheny-Computer-Science-112-S2018/computer-science-112-spring-2018-lab-7-gkapfham.git
+  git clone git@github.com:Allegheny-Computer-Science-112-S2018/computer-science-112-spring-2018-practical-6-gkapfham.git
 \end{lstlisting}
 
 After this command finishes, you can use \command{cd} to change into the new
@@ -245,166 +245,66 @@ check your project diagram.
 
 \section*{Evaluating the Performance of Recursion and Iteration}
 
-There are many \command{TODO} markers inside of the provided source code.
-Ultimately, it is your responsibility to read each of these and provide the
-required Java source code. With that said, the remainder of this section will
-provide some pointers to help you to implement the needed code. Specifically,
-this assignment asks you to run experiments that produce output like that which
-Figure~\ref{fig:output} provides. In particular, you will implement, test, and
-experimentally study a recursive and an iterative implementation of a method
-that can calculate specific values from the Fibonacci sequence. This well-known
-sequence includes the numbers in the integer sequence that develops in the
-following fashion: $0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, \ldots$. More
-formally, we can define the {\em n}-th Fibonacci number, denoted $F_n$, by the
-equation $F_n = F_{n-1} + F_{n-2}$. Notably, this equation is recursive in
-nature because the {\em n}-th value is defined in terms of the two previous
-values.
+This primary goal for this assignment is to afford students the opportunity to
+practice creating their own Java classes and JUnit test cases. As such, it is
+your responsibility to study the provided source code and add in all of the new
+code that you need to ensure that the system compiles and runs an experiment to
+evaluate the efficiency of the \program{RecursiveFactorialComputation} and the
+\program{IterativeFactorialComputation}. Specifically, the equation for the
+factorial sequence is defined as $n! = n \times n-1 \times n-2 \times \ldots
+\times 1$ or $n! = n \times (n-1)!$ when $n \geq 1$, with $0! = 1$ defined as
+the base case. Following this recursive equation, you can create an
+implementation of the \program{public long compute(int value)} method in the
+\program{RecursiveFactorialComputation} class. As in the previous assignments,
+please make sure that you correctly set the name of this class so that it
+integrates correctly into the experimentation framework. Finally, make sure that
+you understand how this Java class relates to and is tested by the others that
+are the focus of this practical assignment.
 
-Following this recursive equation, you can create an implementation of the
-\program{public long compute(int value)} method in the
-\program{RecursiveFibonacciComputation} class. Make sure that your
-implementation of this method handles the cases when the \program{value}
-parameter is zero, greater than zero but less than or equal to two, and then
-greater than two. Critically, please ensure that your implementation of this
-method in \program{RecursiveFibonacciComputation} recursively calls itself
-following the example provided in Code Fragment 5.13 in the textbook. As in
-previous assignments, please make sure that you correctly set the name of this
-class so that it integrates correctly into the experimentation framework. Finally,
-make sure that you understand how this Java class relates to the others that are
-furnished for this assignment. Please see the instructor if you have questions
-about these steps.
+Using a loop, you should also create a \program{compute} method in
+\program{IterativeFactorialComputation}. Students who want to learn more about
+the numerical values in the factorial sequence are encouraged to visit the web
+site \url{http://www.tsm-resources.com/alists/fact.html}. Once you have
+implemented methods that pass your own test suite and compute the correct
+numerical values, you are ready to run an experiment. Please proceed cautiously
+as you run the experiments: it is possible that one or more of the algorithms
+may not be efficient, thus potentially requiring extended periods of time to run
+an experiment campaign. With that said, if it is necessary to do so you should
+determine what inputs lead to poor performance and then explain why this poor
+performance is evident. Finally, please bear in mind that the numerical values
+in the factorial sequence grow very rapidly and thus even the \program{long}
+data type may not be able to correctly store the computed values.
 
-Now you should implement the \program{compute} method in the
-\program{IterativeFibonacciComputation} class. As in the
-\program{RecursiveFibonacciComputation}, this method should also handle the
-three distinct cases of when the parameter is zero, greater than zero but less
-than or equal to two, and then greater than two. However, the \program{else}
-block of this method should proceed iteratively instead of in a recursive
-fashion. That is, you should implement a \program{for} loop that can iteratively
-compute the value that the method must return. Since you know what the first two
-values for the Fibonacci sequence are, you can use this information to
-iteratively compute the requested value in the sequence. Students who want to
-learn more about the numerical values in the Fibonacci sequence are encouraged
-to visit the web site \url{http://planetmath.org/listoffibonaccinumbers}. Once
-you have implemented methods that pass the test suite and compute the correct
-values, you are ready to run an experiment. Please proceed cautiously as you run
-the experiments: one of the algorithms is not efficient, thus potentially
-requiring extended periods of time to run an experiment campaign. With that
-said, you should determine what inputs lead to poor performance and then explain
-why this poor performance is evident; reviewing Section 5.5 should help you in
-understanding this algorithm's behavior.
+% In particular, you will implement, test, and experimentally study a recursive
+% and an iterative implementation of a method that can calculate specific values
+% from the Factorial sequence. This well-known sequence includes the numbers in
+% the integer sequence that develops in the following fashion: $0, 1, 1, 2, 3,
+% 5, 8, 13, 21, 34, 55, 89, \ldots$. More formally, we can define the {\em n}-th
+% Factorial number, denoted $F_n$, by the equation $F_n = F_{n-1} + F_{n-2}$.
+% Notably, this equation is recursive in nature because the {\em n}-th value is
+% defined in terms of the two previous values.
 
-% There are several \command{TODO} markers inside of the \program{RunCampaign}
-% class. First, you need to implement a method that can randomly generate an
-% \program{int[]} array. You can refer to the test suite for this laboratory
-% assignment and from previous assignments to learn how to write this method. The
-% next step is one of the most challenging for this assignment! Please review all
-% of the \command{TODO} markers in the \program{run} method of the
-% \program{RunCampaign} class and notice that you need to first call the method
-% that generates the input array at the specified size. Next, you need to sort
-% this array using the \program{sort} method provided by the \program{Sorter} that
-% is a parameter to this method. Please make sure that you adopt the strategy in
-% Code Fragment 4.1 to time the sorting algorithm. Finally, you need to record the
-% timing results in the data table, ensure that the experiment campaign will
-% continue with the next doubled size for the input array, and then go to the next
-% round of the experiment campaign.
+% Remember, if you want to \step{build} your program you can type the command
+% \gradlebuild{} in your terminal, thereby causing the Java compiler to check your
+% program for errors and get it ready to run. If you notice that some of the test
+% cases do not pass, please improve your implementation until all of the tests
+% pass and your program's output looks similar to that which is provided in
+% Figure~\ref{fig:output}.
 
-% You should also note that this assignment requires you to complete the
-% implementation of a \program{ResultsTable} that can store the results from each
-% round of your experiment campaign. To start your implementation of this class,
-% please finish its constructor by creating the two-dimensional array and
-% indicating that the first row of the table will start at zero. Finally, you must
-% provide an implementation of the \program{public void addResult(long size, long
-% timing)} method that will record a new row of data in the \program{ResultsTable}
-% while also calculating the ``order of growth ratio'' between the current data
-% value and the previous value. This step is asking you to write source code that
-% can calculate the third row of the table evident in Figure~\ref{fig:output}.
-% This ratio will help you to understand the algorithm's efficiency. As you are
-% implementing this method, make sure that you take care to set the ratio for the
-% first row to zero and avoid dividing by zero when computing this value.
-
-% It is worth pointing out that your textbook contains several useful insights
-% into the pattern that you should follow when thinking about the running time of
-% the two provided sorting algorithms. For instance, when describing the results
-% from running an experiment, page 153 notes that ``[A]s the value of $n$ is
-% doubled, the running time of {\tt repeat1} typically increases more than
-% fourfold.'' What does this suggest about the likely ``worst-case time
-% complexity'' of the {\tt repeat1} method? How can you apply this intuition to
-% analyze the results that you collect when running an experiment?
-
-% Additionally, page 172 includes the following statement when describing the
-% performance of {\tt repeat2}: ``the running times in that table $\ldots$
-% demonstrate a trend of approximately doubling each time the problem size
-% doubles.'' Again, what would this observation suggest about the likely
-% worst-case time complexity of {\tt repeat2}?
-
-Remember, if you want to \step{build} your program you can type the command
-\gradlebuild{} in your terminal, thereby causing the Java compiler to check your
-program for errors and get it ready to run. If you notice that some of the test
-cases do not pass, please improve your implementation until all of the tests
-pass and your program's output looks similar to that which is provided in
-Figure~\ref{fig:output}. Once the program runs and the tests pass, please
-reflect on this process. What step did you find to be the most challenging? Why?
-You should write your reflections in a file, called \reflection{}, that uses the
-Markdown writing language. You can learn more about Markdown by viewing the
-aforementioned GitHub guide. To complete this part of the assignment, you should
-write one paragraph that reports on your experiences. Your \reflection{} file
-should also have answers to the questions about \mainprogram{}'s implementation,
-testing, and use.
-
-\begin{figure}[t]
-  \centering
-  \begin{verbatim}
-  Results of an experiment campaign with IterativeFibonacciComputation:
-
-  Size (#)        Timing (ms)     Ratio (#)
-  1               0               0
-  2               0               0
-  4               0               0
-  8               0               0
-  16              0               0
-  32              0               0
-  64              0               0
-  128             0               0
-  256             0               0
-  512             0               0
-  1024            0               0
-  2048            0               0
-  4096            0               0
-  8192            1               0
-  16384           0               0
-  32768           1               0
-  65536           2               2
-  131072          1               1
-  262144          1               1
-  524288          1               1
-  1048576         1               1
-  2097152         1               1
-  4194304         2               2
-  \end{verbatim}
-  \vspace*{-.35in}
-  \caption{A Portion of the Expected Output of the \mainprogram{} Program.}~\label{fig:output}
-  \vspace*{-.25in}
-\end{figure}
-
-\section*{Checking the Correctness of Your Program and Writing}
+\section*{Checking the Correctness of Your Program}
 
 As verified by the Checkstyle tool, the source code for the \mainprogram{} and
-the other Java files must adhere to all of the requirements in the Google Java
-Style Guide available at
-\url{https://google.github.io/styleguide/javaguide.html}. The Markdown file that
-contains your reflection must adhere to the standards described in the Markdown
-Syntax Guide \url{https://guides.github.com/features/mastering-markdown/}.
-Finally, your \reflection{} file should adhere to the Markdown standards
-established by the \step{Markdown linting} tool available at
-\url{https://github.com/markdownlint/markdownlint/}. Instead of requiring you to
-manually check that your deliverables adhere to these industry-accepted
+all of the other Java files must adhere to all of the requirements in the Google
+Java Style Guide available at
+\url{https://google.github.io/styleguide/javaguide.html}. Instead of requiring
+you to manually check that your deliverables adhere to these industry-accepted
 standards, GatorGrader makes it easy for you to automatically check if your
 submission meets the standards for correctness. For instance, GatorGrader will
-run the provided JUnit tests, check to ensure that two source code files contain
-the right number of \program{println} statements, and see that you commit to
-GitHub a sufficient number of times when completing this assignment. The focus
-for this assignment is checking that all of the provided tests correctly pass.
+run your JUnit tests and check to ensure that certain source code files contain
+the right number of \program{println} statements. With that said, since the
+focus for this assignment is to give you the opportunity to practice writing
+your own Java classes and JUnit test suites, the course instructor will
+undertake a customized check for each submission of this practical assignment.
 
 To get started with the use of GatorGrader, type the command \gatorgraderstart{}
 in your terminal window. Once this step completes you can type
