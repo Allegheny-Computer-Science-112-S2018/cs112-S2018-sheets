@@ -122,7 +122,7 @@ will complete a programming project using the minimal source code provided by
 the course instructor, ultimately implementing a framework for experimentally
 evaluating two algorithms for arithmetic computation. Specifically, you will
 create and test both an iterative and a recursive implementation of Java
-programs that calculate numbers in the factorial sequence. You will also
+programs that calculate numbers in the Factorial sequence. You will also
 practice creating a data table and calculating an order of growth ratio, honing
 your ability to analytically and empirically evaluate the worst-case time
 complexity of an algorithm. Finally, you will continue to learn how to implement
@@ -151,7 +151,7 @@ completing the project.
   post it to the designated channel. Or, you can ask a student sitting next to you or talk with a teaching assistant or
   the course instructor.
 
-\item {\bf Store your files in GitHub}. As in previous laboratory assignments, you will be responsible for storing
+\item {\bf Store your files in GitHub}. As in previous course assignments, you will be responsible for storing
   all of your files (e.g., Java source code and Markdown-based writing) in a Git repository using GitHub Classroom.
   Please verify that you have saved your source code in your Git repository by using \command{git status} to ensure that
   everything is updated. You can see if your assignment submission meets the established correctness requirements by
@@ -211,9 +211,10 @@ button and then click the link that is prefaced with the label ``Your assignment
 has been created here''. If you accepted the assignment and correctly followed
 these steps, you should have created a GitHub repository with a name like
 ``Allegheny-Computer-Science-112-Spring-2018/computer-science-112-spring-2018-practical-6-gkapfham''.
-Unless you provide the instructor with documentation of the extenuating
-circumstances that you are facing, not accepting the assignment means that you
-automatically receive a failing grade for it.
+
+% Unless you provide the instructor with documentation of the extenuating
+% circumstances that you are facing, not accepting the assignment means that you
+% automatically receive a failing grade for it.
 
 Before you move to the next step of this assignment, please make sure that you
 read all of the content on the web site for your new GitHub repository, paying
@@ -239,9 +240,10 @@ the \command{cd} and \command{ls} commands to explore the files that you
 automatically downloaded from GitHub. What files and directories do you see?
 What do you think is their purpose? Spend some time exploring, sharing your
 discoveries with a neighbor and a \mbox{teaching assistant}. Specifically, each
-student should draw a diagram to show the relationship between the Java classes
-provided for this laboratory assignment. Make sure that you have the instructor
-check your project diagram.
+student should identify the Java classes that they must add to complete the
+assignment and then understand how they connect to the provided classes. Can you
+create a diagram showing all of class relationships? Make sure that you have the
+instructor check your project diagram.
 
 \section*{Evaluating the Performance of Recursion and Iteration}
 
@@ -253,27 +255,27 @@ evaluate the efficiency of the \program{RecursiveFactorialComputation} and the
 \program{IterativeFactorialComputation}. Specifically, the equation for the
 factorial sequence is defined as $n! = n \times n-1 \times n-2 \times \ldots
 \times 1$ or $n! = n \times (n-1)!$ when $n \geq 1$, with $0! = 1$ defined as
-the base case. Following this recursive equation, you can create an
+the base case. Following this recursive equation, you can create and test an
 implementation of the \program{public long compute(int value)} method in the
 \program{RecursiveFactorialComputation} class. As in the previous assignments,
 please make sure that you correctly set the name of this class so that it
 integrates correctly into the experimentation framework. Finally, make sure that
 you understand how this Java class relates to and is tested by the others that
-are the focus of this practical assignment.
+are the needed for this practical assignment.
 
 Using a loop, you should also create a \program{compute} method in
 \program{IterativeFactorialComputation}. Students who want to learn more about
 the numerical values in the factorial sequence are encouraged to visit the web
 site \url{http://www.tsm-resources.com/alists/fact.html}. Once you have
 implemented methods that pass your own test suite and compute the correct
-numerical values, you are ready to run an experiment. Please proceed cautiously
-as you run the experiments: it is possible that one or more of the algorithms
-may not be efficient, thus potentially requiring extended periods of time to run
-an experiment campaign. With that said, if it is necessary to do so you should
-determine what inputs lead to poor performance and then explain why this poor
-performance is evident. Finally, please bear in mind that the numerical values
-in the factorial sequence grow very rapidly and thus even the \program{long}
-data type may not be able to correctly store the computed values.
+numerical values, you are ready to run a doubling experiment. Please proceed
+cautiously as you run the experiments: it is possible that one or more of the
+algorithms may not be efficient, thus potentially requiring extended periods of
+time to run an experiment campaign. With that said, if it is necessary to do so
+you should determine what inputs lead to poor performance and then explain why
+this poor performance is evident. Finally, please bear in mind that the
+numerical values in the factorial sequence grow very rapidly and thus even the
+\program{long} data type may not be able to correctly store the computed values.
 
 % In particular, you will implement, test, and experimentally study a recursive
 % and an iterative implementation of a method that can calculate specific values
@@ -299,10 +301,10 @@ Java Style Guide available at
 \url{https://google.github.io/styleguide/javaguide.html}. Instead of requiring
 you to manually check that your deliverables adhere to these industry-accepted
 standards, GatorGrader makes it easy for you to automatically check if your
-submission meets the standards for correctness. For instance, GatorGrader will
+submission meets the correctness requirements. For instance, GatorGrader will
 run your JUnit tests and check to ensure that certain source code files contain
 the right number of \program{println} statements. With that said, since the
-focus for this assignment is to give you the opportunity to practice writing
+goal of this assignment is to give you the opportunity to practice writing
 your own Java classes and JUnit test suites, the course instructor will
 undertake a customized check for each submission of this practical assignment.
 
@@ -326,18 +328,18 @@ After the course instructor enables \step{continuous integration} with a system
 called Travis CI, when you use the \gitpush{} command to transfer your source
 code to your GitHub repository, Travis CI will initialize a \step{build} of your
 assignment, checking to see if it meets all of the requirements. If both your
-source code and writing meet all of the established requirements, then you will
-see a green \checkmark{} in the listing of commits in GitHub after awhile. If
-your submission does not meet the requirements, a red \naughtmark{} will appear
-instead. The instructor will reduce a student's grade for this assignment if the
-red \naughtmark{} appears on the last commit in GitHub immediately before the
-assignment's due date. Yet, if the green \checkmark{} appears on the last commit
-in your GitHub repository, then you satisfied all of the main checks, thereby
-allowing the course instructor to evaluate other aspects of your source code and
-writing, as further described in the \step{Evaluation} section of this
+source code and documentation meet all of the established requirements, then you
+will see a green \checkmark{} in the listing of commits in GitHub after awhile.
+If your submission does not meet the requirements, a red \naughtmark{} will
+appear instead. The instructor will reduce a student's grade for this assignment
+if the red \naughtmark{} appears on the last commit in GitHub immediately before
+the assignment's due date. Yet, if the green \checkmark{} appears on the last
+commit in your GitHub repository, then you satisfied all of the main checks,
+thereby allowing the course instructor to evaluate other aspects of your source
+code and writing, as further described in the \step{Evaluation} section of this
 assignment sheet. Unless you provide the instructor with documentation of the
 extenuating circumstances that you are facing, no late work will be considered
-towards your grade for this laboratory assignment.
+towards your grade for this practical assignment.
 
 \section*{Summary of the Required Deliverables}
 
@@ -357,23 +359,31 @@ to submit, using GitHub, the following deliverables.
 
 \section*{Evaluation of Your Practical Assignment}
 
-Using a report that the instructor shares with you through the commit log in GitHub, you will privately received a grade
-on this assignment and feedback on your submitted deliverables. Your grade for the assignment will be a function of the
-whether or not it was submitted in a timely fashion and if your program received a green \checkmark{} indicating that it
-met all of the requirements. Other factors will also influence your final grade on the assignment. In addition to
-studying the efficiency and effectiveness of your Java source code, the instructor will also evaluate the accuracy of
-both your technical writing and the comments in your source code. If your submission receives a red \naughtmark{}, the
-instructor will reduce your grade for the assignment while still considering the regularity with which you committed to
-your GitHub repository and the overall quality of your partially completed work. Please see the instructor if you have
-questions about the evaluation of this laboratory assignment.
+Using a report that the instructor shares with you through the commit log in
+GitHub, you will privately received a grade on this assignment and feedback on
+your submitted deliverables. Your grade for the assignment will be a function of
+the whether or not it was submitted in a timely fashion and if your program
+received a green \checkmark{} indicating that it met all of the requirements.
+Other factors will also influence your final grade on the assignment. In
+addition to studying the efficiency and effectiveness of your Java source code,
+the instructor will also evaluate the accuracy of both your technical writing
+and the comments in your source code. If your submission receives a red
+\naughtmark{}, the instructor will reduce your grade for the assignment while
+still considering the regularity with which you committed to your GitHub
+repository and the overall quality of your partially completed work. Please see
+the instructor if you have questions about the evaluation of this practical
+assignment.
 
 \section*{Adhering to the Honor Code}
 
-In adherence to the Honor Code, students should complete this assignment on an individual basis. While it is appropriate
-for students in this class to have high-level conversations about the assignment, it is necessary to distinguish
-carefully between the student who discusses the principles underlying a problem with others and the student who produces
-assignments that are identical to, or merely variations on, someone else's work. Deliverables (e.g., Java source code or
-Markdown-based technical writing) that are nearly identical to the work of others will be taken as evidence of violating
-the \mbox{Honor Code}. Please see the course instructor if you have questions about this policy.
+In adherence to the Honor Code, students should complete this assignment on an
+individual basis. While it is appropriate for students in this class to have
+high-level conversations about the assignment, it is necessary to distinguish
+carefully between the student who discusses the principles underlying a problem
+with others and the student who produces assignments that are identical to, or
+merely variations on, someone else's work. Deliverables (e.g., Java source code
+or Markdown-based technical writing) that are nearly identical to the work of
+others will be taken as evidence of violating the \mbox{Honor Code}. Please see
+the course instructor if you have questions about this policy.
 
 \end{document}
