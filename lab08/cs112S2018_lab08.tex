@@ -352,35 +352,31 @@ write one paragraph that reports on your experiences. Your \reflection{} file
 should also have answers to the questions about \mainprogram{}'s implementation,
 testing, and use.
 
-\begin{figure}[t]
-  \centering
-  \begin{verbatim}
-  Results of an experiment campaign with IterativeFibonacciComputation:
-
+  \begin{figure}[t]
+    \centering
+    \begin{verbatim}
+  Results of an experiment campaign with toString
   Size (#)        Timing (ms)     Ratio (#)
-  1               0               0
-  2               0               0
-  4               0               0
-  8               0               0
-  16              0               0
-  32              0               0
-  64              0               0
-  128             0               0
-  256             0               0
-  512             0               0
-  1024            0               0
-  2048            0               0
-  4096            0               0
-  8192            1               0
-  16384           0               0
-  32768           1               0
-  65536           2               2
-  131072          1               1
-  262144          1               1
-  524288          1               1
-  1048576         1               1
-  2097152         1               1
-  4194304         2               2
+  10              0               0
+  20              0               0
+  40              0               0
+  80              0               0
+  160             1               0
+  320             0               0
+  640             0               0
+  1280            1               0
+  2560            1               1
+  5120            3               3
+  10240           16              5
+  20480           5               0
+  40960           4               1
+  81920           18              5
+  163840          10              1
+  327680          19              2
+  655360          524             28
+  1310720         289             1
+  2621440         985             3
+  5242880         1728            2
   \end{verbatim}
   \vspace*{-.35in}
   \caption{A Portion of the Expected Output of the \mainprogram{} Program.}~\label{fig:output}
@@ -423,16 +419,21 @@ transferring your code or writing to GitHub did not work, then please try to
 determine why, asking a teaching assistant or the course instructor for
 assistance, if necessary.
 
-After the course instructor enables \step{continuous integration} with a system called Travis CI, when you use the
-\gitpush{} command to transfer your source code to your GitHub repository, Travis CI will initialize a \step{build} of
-your assignment, checking to see if it meets all of the requirements. If both your source code and writing meet all of
-the established requirements, then you will see a green \checkmark{} in the listing of commits in GitHub after awhile.
-If your submission does not meet the requirements, a red \naughtmark{} will appear instead. The instructor will reduce a
-student's grade for this assignment if the red \naughtmark{} appears on the last commit in GitHub immediately before the
-assignment's due date. Yet, if the green \checkmark{} appears on the last commit in your GitHub repository, then you
-satisfied all of the main checks, thereby allowing the course instructor to evaluate other aspects of your source code
-and writing, as further described in the \step{Evaluation} section of this assignment sheet. Unless you provide the
-instructor with documentation of the extenuating circumstances that you are facing, no late work will be considered
+After the course instructor enables \step{continuous integration} with a system
+called Travis CI, when you use the \gitpush{} command to transfer your source
+code to your GitHub repository, Travis CI will initialize a \step{build} of your
+assignment, checking to see if it meets all of the requirements. If both your
+source code and writing meet all of the established requirements, then you will
+see a green \checkmark{} in the listing of commits in GitHub after awhile. If
+your submission does not meet the requirements, a red \naughtmark{} will appear
+instead. The instructor will reduce a student's grade for this assignment if the
+red \naughtmark{} appears on the last commit in GitHub immediately before the
+assignment's due date. Yet, if the green \checkmark{} appears on the last commit
+in your GitHub repository, then you satisfied all of the main checks, thereby
+allowing the course instructor to evaluate other aspects of your source code and
+writing, as further described in the \step{Evaluation} section of this
+assignment sheet. Unless you provide the instructor with documentation of the
+extenuating circumstances that you are facing, no late work will be considered
 towards your grade for this laboratory assignment.
 
 \section*{Summary of the Required Deliverables}
@@ -450,8 +451,8 @@ to submit, using GitHub, the following deliverables.
   in a fenced code block.
 
 \item A properly documented and correct version of all the Java source files
-  (i.e., Fibonacci methods, experiments, and tests) that meets the set
-  requirements and produces the desired output.
+  (e.g., \program{SinglyLinkedList} methods) that meets the set requirements and
+  produces the desired experimental output.
 
 \end{enumerate}
 
