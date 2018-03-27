@@ -270,9 +270,9 @@ standards and thus you will have to improve the source code from Code Fragments
     }
 
     /**
-    * Returns (but does not remove) the first element of the list.
-    * @return element at the front of the list (or null if empty)
-    */
+     * Returns (but does not remove) the first element of the list.
+     * @return element at the front of the list (or null if empty)
+     */
     public E getFirst() {
       if (isEmpty()) {
         return null;
@@ -285,20 +285,35 @@ standards and thus you will have to improve the source code from Code Fragments
   \vspace*{-.25in}
 \end{figure}
 
+The key method that you must implement in the \program{SinglyLinkedList} is the
+\program{toString} that produces a textual representation of the node-based data
+structure. If the \program{SinglyLinkedList} contains a total of $n$ elements
+and a specific element is denoted as $e_i$, then the \program{toString} method
+should return a \program{String} of the form ``$(e_1, e_2, \ldots, e_n)$''. This
+output will indicate that $e_1$ has a ``next'' reference to $e_2$ and, more
+generally, an element $e_i$ should have a ``next'' reference to element
+$e_{i+1}$. Importantly, the output shows that the last element in the
+\program{SinglyLinkedList}, denoted $e_n$, has a ``next'' reference that is
+\program{null}. Once you are confident that your \program{toString} method
+returns the correct textual representation of the \program{SinglyLinkedList} you
+should design and conduct a doubling experiment to calculate the order-of-growth
+ratio for this method. Using the big-Oh notation, what does this ratio tell you
+about the likely worst-case time complexity of this method? Finally, if you see
+anomalous ratios in your data tables, can you explain why they are sometimes
+evident?
+
 Remember, if you want to \step{build} your program you can type the command
 \gradlebuild{} in your terminal, thereby causing the Java compiler to check your
 program for errors and get it ready to run. If you notice that some of the test
 cases do not pass, please improve your implementation until all of the tests
 pass and your program's output looks similar to that which is provided in
 Figure~\ref{fig:output}. Once the program runs and the tests pass, please
-reflect on this process. What step did you find to be the most challenging? Why?
-You should write your reflections in a file, called \reflection{}, that uses the
-Markdown writing language. You can learn more about Markdown by viewing the
-aforementioned GitHub guide. To complete this part of the assignment, you should
-write one paragraph that reports on your experiences. Your \reflection{} file
-should also have answers to the questions about \mainprogram{}'s implementation,
-testing, and use.
-
+reflect on this process. You should write your reflections in a file called
+\reflection{}. To complete this assignment part, you should write one paragraph
+that reports on your experiences. Your \reflection{} file should have answers to
+the questions about the \program{SinglyLinkedList}'s implementation, testing,
+and experimental evaluation; please provide your data table in a Markdown-based
+fenced code block.
 
 \section*{Checking the Correctness of Your Program and Writing}
 
@@ -390,6 +405,8 @@ towards your grade for this laboratory assignment.
 writing for any assignment in this course. Instead, this assignment invites you
 to submit, using GitHub, the following deliverables.
 
+\vspace*{-.05in}
+
 \begin{enumerate}
 
   \setlength{\itemsep}{0in}
@@ -403,6 +420,8 @@ to submit, using GitHub, the following deliverables.
   produces the desired experimental output.
 
 \end{enumerate}
+
+\vspace*{-.1in}
 
 \section*{Evaluation of Your Laboratory Assignment}
 
