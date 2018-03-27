@@ -250,48 +250,35 @@ required Java source code. With that said, the remainder of this section will
 provide some pointers to help you to implement the needed code. Specifically,
 this assignment asks you to run experiments that produce output like that which
 Figure~\ref{fig:output} provides. In particular, you will implement, test, and
-experimentally study a recursive and an iterative implementation of a method
-that can calculate specific values from the Fibonacci sequence. This well-known
-sequence includes the numbers in the integer sequence that develops in the
-following fashion: $0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, \ldots$. More
-formally, we can define the {\em n}-th Fibonacci number, denoted $F_n$, by the
-equation $F_n = F_{n-1} + F_{n-2}$. Notably, this equation is recursive in
-nature because the {\em n}-th value is defined in terms of the two previous
-values.
+experimentally study a complete implementation of the \program{SinglyLinkedList}
+data structure. Some of the missing source code in the provided implementation
+can be found in Code Fragments 3.14 and 3.15 in the textbook.
 
-Following this recursive equation, you can create an implementation of the
-\program{public long compute(int value)} method in the
-\program{RecursiveFibonacciComputation} class. Make sure that your
-implementation of this method handles the cases when the \program{value}
-parameter is zero, greater than zero but less than or equal to two, and then
-greater than two. Critically, please ensure that your implementation of this
-method in \program{RecursiveFibonacciComputation} recursively calls itself
-following the example provided in Code Fragment 5.13 in the textbook. As in
-previous assignments, please make sure that you correctly set the name of this
-class so that it integrates correctly into the experimentation framework. Finally,
-make sure that you understand how this Java class relates to the others that are
-furnished for this assignment. Please see the instructor if you have questions
-about these steps.
+  \begin{figure}[t]
+    \centering
+    \begin{verbatim}
+    /** Constructs an initially empty list. */
+    public SinglyLinkedList() {
+      head = null;
+      tail = null;
+      size = 0;
+    }
 
-Now you should implement the \program{compute} method in the
-\program{IterativeFibonacciComputation} class. As in the
-\program{RecursiveFibonacciComputation}, this method should also handle the
-three distinct cases of when the parameter is zero, greater than zero but less
-than or equal to two, and then greater than two. However, the \program{else}
-block of this method should proceed iteratively instead of in a recursive
-fashion. That is, you should implement a \program{for} loop that can iteratively
-compute the value that the method must return. Since you know what the first two
-values for the Fibonacci sequence are, you can use this information to
-iteratively compute the requested value in the sequence. Students who want to
-learn more about the numerical values in the Fibonacci sequence are encouraged
-to visit the web site \url{http://planetmath.org/listoffibonaccinumbers}. Once
-you have implemented methods that pass the test suite and compute the correct
-values, you are ready to run an experiment. Please proceed cautiously as you run
-the experiments: one of the algorithms is not efficient, thus potentially
-requiring extended periods of time to run an experiment campaign. With that
-said, you should determine what inputs lead to poor performance and then explain
-why this poor performance is evident; reviewing Section 5.5 should help you in
-understanding this algorithm's behavior.
+    /**
+    * Returns (but does not remove) the first element of the list.
+    * @return element at the front of the list (or null if empty)
+    */
+    public E getFirst() {
+      if (isEmpty()) {
+        return null;
+      }
+      return head.getElement();
+    }
+    \end{verbatim}
+  \vspace*{-.5in}
+  \caption{The Constructor and \program{getFirst} Method for the \program{SinglyLinkedList}.}~\label{fig:constructor}
+  \vspace*{-.25in}
+\end{figure}
 
 Remember, if you want to \step{build} your program you can type the command
 \gradlebuild{} in your terminal, thereby causing the Java compiler to check your
@@ -306,6 +293,26 @@ aforementioned GitHub guide. To complete this part of the assignment, you should
 write one paragraph that reports on your experiences. Your \reflection{} file
 should also have answers to the questions about \mainprogram{}'s implementation,
 testing, and use.
+
+
+\section*{Checking the Correctness of Your Program and Writing}
+
+As verified by the Checkstyle tool, the source code for the \mainprogram{} and
+the other Java files must adhere to all of the requirements in the Google Java
+Style Guide available at
+\url{https://google.github.io/styleguide/javaguide.html}. The Markdown file that
+contains your reflection must adhere to the standards described in the Markdown
+Syntax Guide \url{https://guides.github.com/features/mastering-markdown/}.
+Finally, your \reflection{} file should adhere to the Markdown standards
+established by the \step{Markdown linting} tool available at
+\url{https://github.com/markdownlint/markdownlint/}. Instead of requiring you to
+manually check that your deliverables adhere to these industry-accepted
+standards, GatorGrader makes it easy for you to automatically check if your
+submission meets the standards for correctness. For instance, GatorGrader will
+run the provided JUnit tests, check to ensure that two source code files contain
+the right number of \program{println} statements, and see that you commit to
+GitHub a sufficient number of times when completing this assignment. The focus
+for this assignment is checking that all of the provided tests correctly pass.
 
   \begin{figure}[t]
     \centering
@@ -337,25 +344,6 @@ testing, and use.
   \caption{A Portion of the Expected Output of the \mainprogram{} Program.}~\label{fig:output}
   \vspace*{-.25in}
 \end{figure}
-
-\section*{Checking the Correctness of Your Program and Writing}
-
-As verified by the Checkstyle tool, the source code for the \mainprogram{} and
-the other Java files must adhere to all of the requirements in the Google Java
-Style Guide available at
-\url{https://google.github.io/styleguide/javaguide.html}. The Markdown file that
-contains your reflection must adhere to the standards described in the Markdown
-Syntax Guide \url{https://guides.github.com/features/mastering-markdown/}.
-Finally, your \reflection{} file should adhere to the Markdown standards
-established by the \step{Markdown linting} tool available at
-\url{https://github.com/markdownlint/markdownlint/}. Instead of requiring you to
-manually check that your deliverables adhere to these industry-accepted
-standards, GatorGrader makes it easy for you to automatically check if your
-submission meets the standards for correctness. For instance, GatorGrader will
-run the provided JUnit tests, check to ensure that two source code files contain
-the right number of \program{println} statements, and see that you commit to
-GitHub a sufficient number of times when completing this assignment. The focus
-for this assignment is checking that all of the provided tests correctly pass.
 
 To get started with the use of GatorGrader, type the command \gatorgraderstart{}
 in your terminal window. Once this step completes you can type
