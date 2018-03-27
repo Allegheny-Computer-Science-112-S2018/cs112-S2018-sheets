@@ -11,6 +11,7 @@ script:
 - latexmk -pdf -outdir=_build lab05/cs112S2018_lab05.tex
 - latexmk -pdf -outdir=_build lab06/cs112S2018_lab06.tex
 - latexmk -pdf -outdir=_build lab07/cs112S2018_lab07.tex
+- latexmk -pdf -outdir=_build lab08/cs112S2018_lab08.tex
 - latexmk -pdf -outdir=_build practical01/cs112S2018_practical01.tex
 - latexmk -pdf -outdir=_build practical02/cs112S2018_practical02.tex
 - latexmk -pdf -outdir=_build practical03/cs112S2018_practical03.tex
@@ -30,6 +31,7 @@ deploy:
     - _build/cs112S2018_lab05.pdf
     - _build/cs112S2018_lab06.pdf
     - _build/cs112S2018_lab07.pdf
+    - _build/cs112S2018_lab08.pdf
     - _build/cs112S2018_practical01.pdf
     - _build/cs112S2018_practical02.pdf
     - _build/cs112S2018_practical03.pdf
