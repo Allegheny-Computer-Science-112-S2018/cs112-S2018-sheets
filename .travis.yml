@@ -18,6 +18,7 @@ script:
 - latexmk -pdf -outdir=_build practical04/cs112S2018_practical04.tex
 - latexmk -pdf -outdir=_build practical05/cs112S2018_practical05.tex
 - latexmk -pdf -outdir=_build practical06/cs112S2018_practical06.tex
+- latexmk -pdf -outdir=_build practical07/cs112S2018_practical07.tex
 - latexmk -pdf -outdir=_build quiz01/cs112S2018_studyguide_quiz01.tex
 deploy:
   provider: releases
@@ -38,6 +39,7 @@ deploy:
     - _build/cs112S2018_practical04.pdf
     - _build/cs112S2018_practical05.pdf
     - _build/cs112S2018_practical06.pdf
+    - _build/cs112S2018_practical07.pdf
     - _build/cs112S2018_studyguide_quiz01.pdf
   skip_cleanup: true
   on:
