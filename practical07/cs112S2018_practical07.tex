@@ -181,6 +181,8 @@ towards correctly completing the project.
 
 \end{itemize}
 
+\vspace*{-.2in}
+
 \section*{Reading Assignment}
 
 If you have not done so already, please read all of the relevant ``GitHub
@@ -240,7 +242,7 @@ student should ensure that they can draw a technical diagram of a \mainprogram{}
 and that they fully understand the purpose and behavior of every test case in
 the \program{TestDoublyLinkedList}.
 
-\section*{Evaluating the Performance of Recursion and Iteration}
+\section*{Implementation and Testing of a Doubly Linked Data Structure}
 
 \begin{figure}[t]
   \centering
@@ -272,16 +274,33 @@ the \program{TestDoublyLinkedList}.
   \end{verbatim}
 
   \vspace*{-.6in}
-  \caption{The Implementation of the \program{removeLast} Method.}~\label{fig:output}
+  \caption{The Implementation of the \program{removeLast} Method.}~\label{fig:code}
   \vspace*{-.25in}
 \end{figure}
 
-Remember, if you want to \step{build} your program you can type the command
-\gradlebuild{} in your terminal, thereby causing the Java compiler to check your
-program for errors and get it ready to run. If you notice that some of the test
-cases do not pass, please improve your implementation until all of the tests
-pass and your program's output looks similar to that which is provided in
-Figure~\ref{fig:output}.
+This practical assignment invites you to implement a \mainprogram{} that can
+produce the output given in Figure~\ref{fig:output}. Specifically, you must add
+the source code provided in Figure~\ref{fig:code} to your implementation of the
+\mainprogram{}. Is this an efficient implementation of this method? What is the
+worst-case time complexity of this method? How can you tell? Now, you are also
+responsible for adding source code to the \program{main} method in
+\mainprogram{} so that it can produce the required output. The final step for
+this practical assignment invites you to implement an \program{equals} method
+that performs ``equivalence testing'' for two instances of \mainprogram{}. To
+learn more about equivalence testing, please review the content in Section 3.5
+of the textbook. Taking into consideration that the \mainprogram{} employs
+header and trailer sentinels, your \program{equals} method should determine if
+two instances contain the same data values. For inspiration, you can see a full
+example of an \program{equals} method for the \program{SinglyLinkedList} by
+looking at the source code for the most recent laboratory assignment. Make sure
+that your \program{equals} does not call a method on a \program{null} object!
+
+% Remember, if you want to \step{build} your program you can type the command
+% \gradlebuild{} in your terminal, thereby causing the Java compiler to check your
+% program for errors and get it ready to run. If you notice that some of the test
+% cases do not pass, please improve your implementation until all of the tests
+% pass and your program's output looks similar to that which is provided in
+% Figure~\ref{fig:output}.
 
 \section*{Checking the Correctness of Your Program}
 
@@ -292,11 +311,8 @@ Java Style Guide available at
 you to manually check that your deliverables adhere to these industry-accepted
 standards, GatorGrader makes it easy for you to automatically check if your
 submission meets the correctness requirements. For instance, GatorGrader will
-run your JUnit tests and check to ensure that certain source code files contain
-the right number of \program{println} statements. With that said, since the
-goal of this assignment is to give you the opportunity to practice writing
-your own Java classes and JUnit test suites, the course instructor will
-undertake a customized check for each submission of this practical assignment.
+run your tests and check to ensure that certain files, like
+\mainprogramsource{}, contain the right number of \program{println} statements.
 
 To get started with the use of GatorGrader, type the command
 \gatorgraderstart{} in your terminal window. Once this step completes you can
@@ -337,6 +353,8 @@ towards your grade for this practical assignment.
 writing for any assignment in this course. Instead, this assignment invites you
 to submit, using GitHub, the following deliverables.
 
+\vspace*{-.1in}
+
 \begin{enumerate}
 
   \setlength{\itemsep}{0in}
@@ -346,6 +364,8 @@ to submit, using GitHub, the following deliverables.
   requirements and produces the desired output.
 
 \end{enumerate}
+
+\vspace*{-.2in}
 
 \section*{Evaluation of Your Practical Assignment}
 
