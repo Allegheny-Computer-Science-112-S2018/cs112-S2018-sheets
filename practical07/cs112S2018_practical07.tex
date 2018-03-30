@@ -242,51 +242,46 @@ the \program{TestDoublyLinkedList}.
 
 \section*{Evaluating the Performance of Recursion and Iteration}
 
-This primary goal for this assignment is to afford students the opportunity to
-practice creating their own Java classes and JUnit test cases. As such, it is
-your responsibility to study the provided source code and add in all of the new
-code that you need to ensure that the system compiles and runs an experiment to
-evaluate the efficiency of the \program{RecursiveFactorialComputation} and the
-\program{IterativeFactorialComputation}. Specifically, the equation for the
-factorial sequence is defined as $n! = n \times n-1 \times n-2 \times \ldots
-\times 1$ or $n! = n \times (n-1)!$ when $n \geq 1$, with $0! = 1$ defined as
-the base case. Following this recursive equation, you can create and test an
-implementation of the \program{public long compute(int value)} method in the
-\program{RecursiveFactorialComputation} class. As in the previous assignments,
-please make sure that you correctly set the name of this class so that it
-integrates correctly into the experimentation framework. Finally, make sure that
-you understand how this Java class relates to and is tested by the others that
-are the needed for this practical assignment.
+\begin{figure}[t]
+  \centering
+  \begin{verbatim}
 
-Using a loop, you should also create a \program{compute} method in
-\program{IterativeFactorialComputation}. Students who want to learn more about
-the numerical values in the factorial sequence are encouraged to visit the web
-site \url{http://www.tsm-resources.com/alists/fact.html}. Once you have
-implemented methods that pass your own test suite and compute the correct
-numerical values, you are ready to run a doubling experiment. Please proceed
-cautiously as you run the experiments: it is possible that one or more of the
-algorithms may not be efficient, thus potentially requiring extended periods of
-time to run an experiment campaign. With that said, if it is necessary to do so
-you should determine what inputs lead to poor performance and then explain why
-this poor performance is evident. Finally, please bear in mind that the
-numerical values in the factorial sequence grow very rapidly and thus even the
-\program{long} data type may not be able to correctly store the computed values.
+    DoublyLinkedList Before removeLast:
+    (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 
-% In particular, you will implement, test, and experimentally study a recursive
-% and an iterative implementation of a method that can calculate specific values
-% from the Factorial sequence. This well-known sequence includes the numbers in
-% the integer sequence that develops in the following fashion: $0, 1, 1, 2, 3,
-% 5, 8, 13, 21, 34, 55, 89, \ldots$. More formally, we can define the {\em n}-th
-% Factorial number, denoted $F_n$, by the equation $F_n = F_{n-1} + F_{n-2}$.
-% Notably, this equation is recursive in nature because the {\em n}-th value is
-% defined in terms of the two previous values.
+    DoublyLinkedList After removeLast:
+    (0, 1, 2, 3, 4, 5, 6, 7, 8)
+  \end{verbatim}
 
-% Remember, if you want to \step{build} your program you can type the command
-% \gradlebuild{} in your terminal, thereby causing the Java compiler to check your
-% program for errors and get it ready to run. If you notice that some of the test
-% cases do not pass, please improve your implementation until all of the tests
-% pass and your program's output looks similar to that which is provided in
-% Figure~\ref{fig:output}.
+  \vspace*{-.35in}
+  \caption{The Expected Output of the \mainprogram{} Program.}~\label{fig:output}
+  \vspace*{-.1in}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \begin{verbatim}
+
+    public E removeLast() {
+      if (isEmpty()) {
+        return null;
+      }
+      return remove(trailer.getPrev());
+    }
+
+  \end{verbatim}
+
+  \vspace*{-.6in}
+  \caption{The Implementation of the \program{removeLast} Method.}~\label{fig:output}
+  \vspace*{-.25in}
+\end{figure}
+
+Remember, if you want to \step{build} your program you can type the command
+\gradlebuild{} in your terminal, thereby causing the Java compiler to check your
+program for errors and get it ready to run. If you notice that some of the test
+cases do not pass, please improve your implementation until all of the tests
+pass and your program's output looks similar to that which is provided in
+Figure~\ref{fig:output}.
 
 \section*{Checking the Correctness of Your Program}
 
