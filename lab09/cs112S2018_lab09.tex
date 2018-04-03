@@ -261,26 +261,20 @@ standards and thus you will have to improve the source code from Code Fragments
   \begin{figure}[t]
     \centering
     \begin{verbatim}
-    /** Constructs an initially empty list. */
-    public SinglyLinkedList() {
-      head = null;
-      tail = null;
-      size = 0;
-    }
 
-    /**
-     * Returns (but does not remove) the first element of the list.
-     * @return element at the front of the list (or null if empty)
-     */
-    public E getFirst() {
-      if (isEmpty()) {
-        return null;
-      }
-      return head.getElement();
-    }
+    ArrayList before removing first element:
+    (9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
+
+    ArrayList after removing first element:
+    (8, 7, 6, 5, 4, 3, 2, 1, 0)
+
+    ArrayList after removing last element:
+    (8, 7, 6, 5, 4, 3, 2, 1)
+
     \end{verbatim}
   \vspace*{-.5in}
-  \caption{The Constructor and \program{getFirst} Method for the \program{SinglyLinkedList}.}~\label{fig:constructor}
+  \caption{The Output from running the \program{main} Method in the
+  \program{ArrayList}.}~\label{fig:output}
   \vspace*{-.25in}
 \end{figure}
 
@@ -332,37 +326,6 @@ run the provided JUnit tests, check to ensure that two source code files contain
 the right number of \program{println} statements, and see that you commit to
 GitHub a sufficient number of times when completing this assignment. The focus
 for this assignment is checking that all of the provided tests correctly pass.
-
-  \begin{figure}[t]
-    \centering
-    \begin{verbatim}
-  Results of an experiment campaign with toString
-  Size (#)        Timing (ms)     Ratio (#)
-  10              0               0
-  20              0               0
-  40              0               0
-  80              0               0
-  160             1               0
-  320             0               0
-  640             0               0
-  1280            1               0
-  2560            1               1
-  5120            3               3
-  10240           16              5
-  20480           5               0
-  40960           4               1
-  81920           18              5
-  163840          10              1
-  327680          19              2
-  655360          524             28
-  1310720         289             1
-  2621440         985             3
-  5242880         1728            2
-  \end{verbatim}
-  \vspace*{-.35in}
-  \caption{A Portion of the Expected Output of the \mainprogram{} Program.}~\label{fig:output}
-  \vspace*{-.25in}
-\end{figure}
 
 To get started with the use of GatorGrader, type the command \gatorgraderstart{}
 in your terminal window. Once this step completes you can type
