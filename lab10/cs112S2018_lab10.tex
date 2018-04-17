@@ -215,18 +215,22 @@ circumstances that you are facing, not accepting the assignment means that you
 automatically receive a failing grade for it. Please see the instructor with
 questions.
 
-Before you move to the next step of this assignment, please make sure that you read all of the content on the web site
-for your new GitHub repository, paying close attention to the technical details about the commands that you will type
-and any extra steps that you must take. Now you are ready to download the starting materials to your laboratory
-computer. Click the ``Clone or download'' button and, after ensuring that you have selected ``Clone with SSH'', please
-copy this command to your clipboard. To enter the correct directory you should now type \command{cd cs111F2017}. Next,
-you can type the command \command{ls} and see that there are some files or directories inside of this directory. By
-typing \command{git clone} in your terminal and then pasting in the string that you copied from the GitHub site you will
-download all of the code for this assignment. For the previous example, a student would run a \command{git clone}
+Before you move to the next step of this assignment, please make sure that you
+read all of the content on the web site for your new GitHub repository, paying
+close attention to the technical details about the commands that you will type
+and any extra steps that you must take. Now you are ready to download the
+starting materials to your laboratory computer. Click the ``Clone or download''
+button and, after ensuring that you have selected ``Clone with SSH'', please
+copy this command to your clipboard. To enter the correct directory you should
+now type \command{cd cs112S2018}. Next, you can type the command \command{ls}
+and see that there are some files or directories inside of this directory. By
+typing \command{git clone} in your terminal and then pasting in the string that
+you copied from the GitHub site you will download all of the code for this
+assignment. For the previous example, a student would run a \command{git clone}
 command in the terminal in this fashion:
 
 \begin{lstlisting}
-  git clone git@github.com:Allegheny-Computer-Science-111-F2017/computer-science-111-fall-2017-lab-11-group-2-for-lab-11.git
+  git clone git@github.com:Allegheny-Computer-Science-112-S2018/computer-science-112-spring-2018-lab-10-group-2-for-lab-10.git
 \end{lstlisting}
 
 After this command finishes, you can use \command{cd} to change into the new directory. If you want to \step{go back}
@@ -238,6 +242,7 @@ will need to edit the three Markdown files in the \program{writing/} directory b
 additional tips to help you design, implement, and test the Java source code for the final project:
 
 \begin{itemize}
+  \setlength{\itemsep}{0in}
   \item Make sure that your Java source code contains declarations that place it in the correct package.
   \item Given the name that you picked for your package, ensure that your directories are correct.
   \item Update the \program{build.gradle} file so that it contains the correct package and Java class name.
@@ -246,65 +251,95 @@ additional tips to help you design, implement, and test the Java source code for
   \item Remember that all of your Java source code must meet Google's programming standards.
   \item Recall that there are no GatorGrader checks for this assignment since each project is different.
   \item In GatorGrader's absence, your team should establish correctness checks for your source code.
+  \item Importantly, your team must implement JUnit tests to assess
+    Java program correctness.
 \end{itemize}
 
 \section*{Description of the Topics}
 
-Each partnership is invited to pick one of the following projects.  Please note that a partnership selecting the
-student-designed project must first discuss the idea with the course instructor, during today's laboratory session, and
-receive feedback and then final approval. Please note that you and your partner are fully responsible for ensuring the
-feasibility of the project that you propose.
+Each partnership is invited to pick one of the following projects. Please note
+that a team selecting the student-designed project must first discuss the idea
+with the course instructor, during today's laboratory session, and receive
+feedback and then final approval. Please note that your team are fully
+responsible for ensuring the feasibility of the project that you propose.
+
+% Your team may not pick a final project that one team member previously pursued
+% in Computer Science 111.
 
 \begin{enumerate}
 
-  \item {\bf Cryptography and Cryptanalysis}: Explore a topic in the fields that make up the ``art and science of
-    sending and decoding secret messages''. This project invites you and your partner to implement and test several
-    cryptography and/or cryptanalysis systems. To start, you should investigate, implement, and test ciphers such as
-    the Caesar and Vigenere ciphers. Then, you should use your ciphers to demonstrate that you can successfully send
-    secret messages through, for instance, an email server. In addition to creating and testing these Java programs,
-    your report should include a detailed explanation of how your chosen algorithms work.
+  \item {\bf Cryptography and Cryptanalysis}: Explore a topic in the fields that
+    make up the ``art and science of sending and decoding secret messages''.
+    This project invites your team to implement, test, and evaluate several
+    cryptography and/or cryptanalysis systems. To start, you should investigate,
+    implement, and test ciphers such as the Caesar and Vigenere ciphers. Then,
+    you should use your ciphers to demonstrate that you can successfully send
+    secret messages through, for instance, an email server. In addition to
+    creating and testing these Java programs, your report should include a
+    detailed explanation of how your chosen algorithms work. Finally, you should
+    conduct and carefully report on doubling experiments that evaluate the
+    efficiency of your tool that performs cryptography and/or cryptanalysis.
 
-  \item {\bf Computer Graphics}: Potentially using your textbook's sections on computer graphics as a starting point,
-    implement a complete program that displays graphics and colors. Students who select this project should consider
-    ways in which the graphics can, for instance, represent realistic entities, support interactivity, and properly
-    adhere to artistic principles of color, light, and layout. In addition to furnishing the project's source code, your
-    report should include a detailed artistic, technical, and/or mathematical commentary on the final graphics.
+  \item {\bf Data Structures}: This topic invites you to either investigate a
+    data structure that we did not already study this semester or,
+    alternatively, further look into a data structure that we previously
+    discussed. A team that selects this project might review the textbook's
+    content about a specific data structure (e.g., Chapter 7's discussion of
+    \program{ArrayList}s) and then identify one area for further study. For
+    instance, you could decide to implement and test your own version of this
+    data types that is ``backed'' by a fixed-size array. Specifically, you could
+    use as an inspiration some of the guidelines in Chapter 7 when you implement
+    and test your own dynamic array that can both grow and shrink in size.
+    Finally, you can run experiments to assess the your implementation's
+    efficiency and write a performance evaluation report.
 
-  \item {\bf Interactive Storytelling}: Leveraging your knowledge of file and console input and output, create a
-    computer program that allows a person to engage with a ``choose your own adventure''-style story or game. After
-    reading in commands from the user, your program will display information about the world subject to exploration and
-    act on the user's request. Along with creating and testing your program, your report should fully describe your
-    interactive story and how you used, for instance, conditional logic and iteration to create it.
+  \item {\bf Performance Evaluation}: Since it is often important to implement
+    computer software that exhibits acceptable time and space overheads, this
+    project invites students to use and/or extend performance evaluation
+    software like \program{System.nanoTime()}. After finding, reading, and
+    understanding textbooks and research papers on this topic, students who pick
+    this project should identify a focus area and create a benchmarking tool.
+    The final version of the framework should allow students to measure the
+    performance of computations in Java, report those measurements to the user
+    of the benchmarks, and support informed decision making about design and
+    implementation trade-offs. Along with including the source code of the
+    benchmarking framework, this project invites students to write a performance
+    evaluation report.
 
-  \item {\bf Computer Simulation}: There are many physical or biological phenomena that are challenging to study in
-    either a laboratory or a natural setting. As such, natural and social scientists may implement computer simulations
-    that model these phenomena, often leading to additional insights into how the real systems operate. This project
-    invites you and your partner to pick a phenomenon that you would like to simulate and then implement a full-featured
-    simulation in the Java programming language. Your chosen phenomenon for simulation might involve the throwing of a
-    ball, the vibration of a string, chemical reactions, or the interaction between predator and prey animals. In
-    addition to implementing and running your simulation, your report should completely describe the phenomenon that
-    your program models and explain how your implementation uses, for example, methods for random number generation.
-
-  \item {\bf Performance Evaluation}: Since it is often important to implement computer software that exhibits
-    acceptable time and space overheads, this project invites students to use and/or extend performance evaluation
-    software like \program{System.nanoTime()}. After finding, reading, and understanding textbooks and research papers
-    on this topic, students who pick this project should identify a focus area and create a benchmarking tool. The final
-    version of the framework should allow students to measure the performance of computations in Java, report those
-    measurements to the user of the benchmarks, and support informed decision making about design and implementation
-    trade-offs. Along with including the source code of the benchmarking framework, this project invites students to
-    write a performance evaluation report.
-
-  \item {\bf Software Testing}: In response to the fact that real-world software often contains serious defects, this
-    project encourages students to learn more about techniques that can find program errors before they are delivered to
-    end-users. Students who choose this topic will investigate software testing tools, such as JUnit, and then create
-    a software system that includes a test suite. In addition to implementing Java classes and methods that provide the
-    main functionality, you will, as part of this project, also write tests that assess the correctness of the
-    aforementioned methods. If your team picks this project, you should submit programs and test suites in
+  \item {\bf Software Testing}: In response to the fact that real-world software
+    often contains serious defects, this project encourages students to learn
+    more about techniques that can find program errors before they are delivered
+    to end-users. Students who choose this topic will investigate software
+    testing tools, such as JUnit, and then create a software system that
+    includes a test suite. In addition to implementing Java classes and methods
+    that provide the main functionality, you will, as part of this project, also
+    write tests that assess the correctness of the aforementioned methods. If
+    your team picks this project, you should submit programs and test suites in
     addition to a report that explains your approach to software testing.
 
-  \item {\bf Student-Designed Project}: Students will develop an idea for their own project that focuses on one or more
-    real-world topics in the field of computer science. After receiving the course instructor's approval for your idea,
-    you will complete the project and report on your results.
+  \item {\bf Searching and Sorting}: In a previous laboratory assignment you
+    experimentally studied the performance of sorting algorithms. A team that
+    selects this project could implement and then analytically (i.e., with a
+    proof) and empirically study the performance of a sorting algorithm. Or, you
+    could investigate an algorithm that searches through a data structure (e.g.,
+    a tree or a hashtable) and looks for data that matches a specific pattern.
+    Students who pick this project should review Section 3.1.2 and further study
+    Chapter 12 of the textbook.
+
+  \item {\bf System Implementation}: Now that you understand the key topics of
+    this course, you are ready to design, implement, and test your own program.
+    A team that picks this project should first identify a problem domain in
+    which they will work. For instance, you might decide that you want to
+    implement your own command-line client for the Twitter social network by
+    investigating the Twitter4J library. Then, you will need to decide on the
+    data structures and algorithms that you will need to store and manipulate
+    your data. If you pick this project, then you should review Chapter 2 and
+    the chapter(s) for your chosen data structures.
+
+  \item {\bf Student-Designed Project}: Students will develop an idea for their
+    own project that focuses on one or more real-world topics in the field of
+    computer science. After receiving the course instructor's approval for your
+    idea, you will complete the project and report on your results.
 
 \end{enumerate}
 
