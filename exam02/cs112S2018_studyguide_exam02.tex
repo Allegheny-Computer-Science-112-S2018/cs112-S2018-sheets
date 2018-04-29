@@ -1,0 +1,409 @@
+\documentclass[11pt]{article}
+
+% NOTE: The "Edit" sections are changed for each assignment
+
+% Edit these commands for each assignment
+
+\newcommand{\assignmentduedate}{April 6}
+\newcommand{\assignmentassignedate}{April 2}
+\newcommand{\assignmentnumber}{One}
+
+\newcommand{\labyear}{2018}
+\newcommand{\assignedday}{Monday}
+\newcommand{\dueday}{Friday}
+\newcommand{\labtime}{1:30 pm}
+
+\newcommand{\assigneddate}{Announced: \assignedday, \assignmentassignedate, \labyear{} at \labtime{}}
+\newcommand{\duedate}{Exam: \dueday, \assignmentduedate, \labyear{} at \labtime{}}
+
+% Edit these commands to give the name to the main program
+
+\newcommand{\mainprogram}{\lstinline{DisplayOutput}}
+\newcommand{\mainprogramsource}{\lstinline{src/main/java/labone/DisplayOutput.java}}
+
+% Edit this commands to describe key deliverables
+
+\newcommand{\reflection}{\lstinline{writing/reflection.md}}
+
+% Commands to describe key development tasks
+
+% --> Running gatorgrader.sh
+\newcommand{\gatorgraderstart}{\command{./gatorgrader.sh --start}}
+\newcommand{\gatorgradercheck}{\command{./gatorgrader.sh --check}}
+
+% --> Compiling and running program with gradle
+\newcommand{\gradlebuild}{\command{gradle build}}
+\newcommand{\gradlerun}{\command{gradle run}}
+
+% Commands to describe key git tasks
+
+% NOTE: Could be improved, problems due to nesting
+
+\newcommand{\gitcommitfile}[1]{\command{git commit #1}}
+\newcommand{\gitaddfile}[1]{\command{git add #1}}
+
+\newcommand{\gitadd}{\command{git add}}
+\newcommand{\gitcommit}{\command{git commit}}
+\newcommand{\gitpush}{\command{git push}}
+\newcommand{\gitpull}{\command{git pull}}
+
+\newcommand{\gitcommitmainprogram}{\command{git commit src/main/java/labone/DisplayOutput.java -m "Your
+descriptive commit message"}}
+
+% Use this when displaying a new command
+
+\newcommand{\command}[1]{``\lstinline{#1}''}
+\newcommand{\program}[1]{\lstinline{#1}}
+\newcommand{\url}[1]{\lstinline{#1}}
+\newcommand{\channel}[1]{\lstinline{#1}}
+\newcommand{\option}[1]{``{#1}''}
+\newcommand{\step}[1]{``{#1}''}
+
+\usepackage{pifont}
+\newcommand{\checkmark}{\ding{51}}
+\newcommand{\naughtmark}{\ding{55}}
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  columns=flexible,
+  breaklines=true
+}
+
+\usepackage{fancyhdr}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\fancyhf{}
+\rhead{Computer Science 112}
+\lhead{Exam \assignmentnumber{}}
+\rfoot{Page \thepage}
+\lfoot{\duedate}
+
+\usepackage{titlesec}
+\titlespacing\section{0pt}{6pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+\newcommand{\guidetitle}[1]
+{
+  \begin{center}
+    \begin{center}
+      \bf
+      CMPSC 112\\Introduction to Computer Science II\\
+      Spring 2018\\
+      \medskip
+    \end{center}
+    \bf
+    #1
+  \end{center}
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\guidetitle{Exam \assignmentnumber{} Study Guide \\ \assigneddate{} \\ \duedate{}}
+
+\section*{Introduction}
+
+\noindent
+The exam will be ``closed notes'' and ``closed book'' and it will cover the
+following materials. Please review the ``Course Schedule'' on the Web site for
+the course to see the content and slides that we have covered to this date.
+Students may post questions about this material to our Slack team.
+
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item Chapter One in DSAAJ, all sections (i.e., ``Java Primer'')
+
+  \item Chapter Two in DSAAJ, all sections (i.e., ``Object-Oriented Design'')
+
+  \item Chapter Three in DSAAJ, all sections (i.e., ``Fundamental Data Structures'')
+
+  \item Chapter Four in DSAAJ, skipping Section 4.4 (i.e., ``Algorithm Analysis'')
+
+  \item Chapter Five in DSAAJ, skipping Section 5.6 (i.e., ``Recursion'')
+
+  \item Chapter Seven in DSAAJ, skipping Sections 7.3, 7.5, and 7.6 (i.e., ``Lists and Iterators'')
+
+  \item Using the commands in the terminal window (e.g., \program{cd} and
+    \program{ls}); building and running Java programs with Gradle; knowledge of
+    the basic commands for using \program{git} and GitHub
+
+  \item Your class notes and the discussion slides available from the course web
+    site
+
+  \item Source code and writing for laboratory assignments 1--8 and practical
+    assignments 1--6
+
+\end{itemize}
+
+\noindent The exam will be a mix of questions that have a form such as fill in
+the blank, short answer, true/false, and completion. The emphasis will be on the
+following topics:
+
+\vspace*{-.05in}
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item Fundamental concepts in computing and the Java language (e.g.,
+    definitions and background)
+
+  \item Practical laboratory techniques (e.g., editing, building, and running
+    programs; effectively using files and directories; correctly using GitHub
+    through the command-line {\tt git} program)
+
+  \item Understanding Java programs (e.g., given a short, perhaps even one line,
+    source code segment written in Java, understand what it does and be able to
+    precisely describe its output).
+
+  \item Knowledge of worst-case time complexities, expressed in the ``big-Oh''
+    notation, for all of the algorithms provided by the studied data structures
+    (e.g., \program{removeLast} for a node-based list).
+
+  \item Composing Java statements and programs, given a description of what
+    should be done. Students should be completely comfortable writing short
+    source code statements that are in nearly-correct form as Java code. While
+    your program may contain small syntactic errors, it is not acceptable to
+    ``make up'' features of the Java programming language that do not exist in
+    the language itself---so, please do not call a ``{\tt
+    solveQuestionThree()}'' method!
+
+\end{itemize}
+
+\noindent No partial credit will be given for questions that are true/false,
+completion, or fill in the blank. Minimal partial credit may be awarded for the
+questions that require a student to write a short answer. You are strongly
+encouraged to write short, precise, and correct responses to all of the
+questions. When you are taking the exam, you should do so as a ``point
+maximizer'' who first responds to the questions that you are most likely to
+answer correctly for full points. Please keep the time limitation in mind as you
+are absolutely required to submit the examination at the end of the class period
+unless you have written permission for extra time from a member of the Learning
+Commons. Students who do not submit their exam on time will have their overall
+point total reduced. Finally, students may only reschedule the exam for a
+different date or time if they are facing documented extenuating circumstances
+that prevent them from attending the scheduled time slot. Please see the course
+instructor if you have questions about any of these policies.
+
+\section*{Reminder Concerning the Honor Code}
+
+\noindent Students are required to fully adhere to the Honor Code during the
+completion of this exam. More details about the Allegheny College Honor Code are
+provided on the syllabus. Students are strongly encouraged to carefully review
+the full statement of the Honor Code before taking this exam. If you do not
+understand Allegheny College's Honor Code, please schedule a meeting with the
+course instructor. The following is a review of Honor Code statement from the
+course syllabus:
+
+\vspace*{-.05in}
+
+\begin{quote}
+The Academic Honor Program that governs the entire academic program at
+Allegheny College is described in the Allegheny Academic Bulletin. The Honor
+Program applies to all work that is submitted for academic credit or to meet
+non-credit requirements for graduation at Allegheny College. This includes all
+work assigned for this class (e.g., examinations, laboratory assignments, and
+the final project). All students who have enrolled in the College will work
+under the Honor Program.  Each student who has matriculated at the College has
+acknowledged the following pledge:
+\end{quote}
+
+\vspace*{-.1in}
+
+\begin{quote}
+  I hereby recognize and pledge to fulfill my responsibilities, as defined in the Honor Code, and to maintain the
+  integrity of both myself and the College community as a whole.
+\end{quote}
+
+\section*{Detailed Review of Content}
+
+The listing of topics in the following subsections is not exhaustive; rather, it
+serves to illustrate the types of concepts that students should study as they
+prepare for the exam. Please see the instructor during office hours if you have
+questions about any of the content listed in this section.
+
+\vspace*{-.1in}
+
+\subsection*{Chapter One}
+
+\begin{itemize}
+
+  \item Basic syntax and semantics of the Java programming language
+  \item Input(s) and output(s) of the Java compiler and virtual machine
+  \item How to use \command{gradle} to build, run, and test a Java program
+  \item The base types available for primitive variables in the Java language
+  \item How to create and use classes and objects in the Java language
+  \item How to define and call methods and constructors of a Java class
+  \item The declaration and use of \program{String}, \program{StringBuffer}, and arrays
+  \item Type conversion operators and control flow constructs in Java
+  \item Software engineering principles as expressed in Java (e.g., packages and
+    JUnit tests)
+  \item How to write effective test cases in JUnit for various data structures
+    and algorithms
+  \item How to use the JavaDoc standard to write informative
+    comments in Java programs
+  \item An understanding of the Java source code supporting a program that
+    performs input and output with the console (e.g.,
+    \program{System.out.println}) and files (e.g., \program{java.util.Scanner})
+
+\end{itemize}
+
+\vspace*{-.2in}
+\subsection*{Chapter Two}
+
+\begin{itemize}
+
+  \setlength{\itemsep}{0.05in}
+
+  \item The goals, principles, and patterns of object-oriented design in the
+    Java language
+  \item An understanding of the principles known as abstraction, encapsulation, and modularity
+  \item How to use inheritance hierarchies to create an ``is a'' relationship
+    between Java classes
+  \item The meaning and purpose of abstract classes and interfaces in the Java
+    programming language
+  \item How to create, catch, and handle exceptions thrown in a Java program
+  \item How to performing casting to convert a variable from one data type to another
+  \item The ways in which generics promote the implementation of reusable Java
+    programs
+
+\end{itemize}
+
+\vspace*{-.2in}
+\subsection*{Chapter Three}
+
+\begin{itemize}
+
+  \setlength{\itemsep}{0.05in}
+
+  \item How to use arrays to store primitive and reference variables
+  \item The algorithms for sorting arrays into ascending and descending order
+  \item How to use psuedo random number generators in Java programs
+  \item The similarities and differences between one- and two-dimensional arrays
+  \item The meaning and purpose of techniques for cloning data structures
+  \item The similarities and differences between ``deep'' and ``shallow'' copies
+    of arrays
+  \item How to use the Java methods to construct ``deep'' and ``shallow'' copies
+    of data structures
+  \item An understanding of the types of nodes in a \program{SinglyLinkedList} and \program{DoublyLinkedList}
+  \item The benefits and trade-offs associated with the \program{SinglyLinkedList} and \program{DoublyLinkedList}
+  \item Knowledge of the worst-case time complexity for all methods of node-based structures
+  \item Why the \program{removeLast} implementation is inefficient when
+    implemented in a \program{SinglyLinkedList}
+  \item The meaning of the term ``equivalence testing'' and how it connects to data structures
+  \item The ``equivalence relationship'' that must be upheld by, for instance, \program{DoublyLinkedList}
+  \item The trade-offs associated with using either arrays or linked lists to implement data structures
+  \item The benefits that come from using Java's generics to implement node-based list
+    structures
+
+\end{itemize}
+
+\vspace*{-.2in}
+\subsection*{Chapter Four}
+
+\begin{itemize}
+
+  \setlength{\itemsep}{0.05in}
+
+  \item A strategy for timing the implementation of an algorithm in the Java
+    programming language
+  \item The challenges associated with experimentally studying an algorithm's
+    performance
+  \item A comprehensive understanding of why to use a doubling experiment to
+    study efficiency
+  \item An understanding of all of the steps and source code needed to conduct a
+    doubling experiment
+  \item The challenges associated with conduct an experimental evaluation of an
+    algorithm
+  \item The meaning and purpose of the terms ``basic operation'' and ``psuedo code''
+  \item An intuitive understanding of best-, worst-, and average-case analytical
+    evaluations
+  \item Knowledge of the seven functions used to characterize an algorithm's
+    complexity class
+  \item The relationship between an order-of-growth ratio and the worst-case
+    time complexity
+  \item The meaning of the ``Big-Oh'' notation used during the
+    analytical evaluation of algorithms
+  \item Knowledge of the patterns in psuedo code that suggest certain
+    worst-case time complexities
+  \item How to intuitively prove the worst-case time complexity of an algorithm
+    using psuedo code
+
+\end{itemize}
+
+\vspace*{-.2in}
+\subsection*{Chapter Five}
+
+\begin{itemize}
+
+  \setlength{\itemsep}{0.05in}
+
+  \item How to use a recursive approach to solving a problem (e.g., the base
+    and recursive cases)
+  \item Knowledge of recursive algorithms for arithmetic computation (e.g., factorial
+    and Fibonacci)
+  \item How to determine and justify the worst-case time complexity for
+    the recursive factorial method
+  \item The similarities and differences of algorithms that have linear, binary, and multiple
+    recursion
+  \item An understanding of how different recursive strategies influence the
+    efficiency of an algorithm
+  \item A precise understanding of what it means for a recursive algorithm to
+    ``run amok''
+  \item The ability to explain why the ``traditional'' recursive Fibonacci
+    method is inefficient
+  \item The way in which the Java programming language's virtual machine runs recursive methods
+  \item The ability to draw a ``call tree'' diagram to explain the
+    execution of a recursive method
+  \item An understanding of why a recursive method can cause a ``stack
+    overflow'' error
+  \item The meaning and behavior of a Java method that has an infinite recursion
+
+\end{itemize}
+
+\vspace*{-.2in}
+\subsection*{Chapter Seven}
+
+\begin{itemize}
+
+  \setlength{\itemsep}{0.05in}
+
+  \item A fundamental understanding of the meaning and purposes of a list
+    abstract data type
+
+  \item An approach to implementing and testing an array-based version of the
+    list data structure
+
+  \item The benefits that come from using Java's generics to implement
+    array-based list structures
+
+  \item The four steps that a dynamic array must perform when the internal
+    fixed-sized array is full
+
+  \item How the \program{StringBuilder} uses a dynamic array to implement
+    a mutable string that is efficient
+
+  \item The impact that the use of an \program{ArrayList} has on the memory
+    usage of a Java program
+
+  \item The trade-offs associated with using either arrays or linked lists to implement data structures
+
+  \item Knowledge of the worst-case time complexities for all of the methods
+    of the dynamic array
+
+  \item Knowledge of how to use an \program{Iterator} in a Java program that
+    creates and manipulates lists
+
+  \item A basic understanding of the data structures that the Java programming
+    language provides in the ``Collections'' framework (e.g.,
+    \program{java.util.ArrayList} and \program{java.util.Vector})
+
+\end{itemize}
+
+\end{document}
